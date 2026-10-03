@@ -101,21 +101,14 @@ function shareToWhatsApp(id, event) {
   message += `*Series:* ${item.series.toUpperCase()} | Finish: ${item.finish || "Standard"}\n`;
   message += `*Module / Pack:* ${item.modules || 1}M | ${item.packing || "Standard Unit"}\n\n`;
 
-  message += `*Technical Specifications:*\n`;
-  message += `• Material Grade: UV-Stabilized Polycarbonate (FR Grade)\n`;
-  message += `• Rating: 240 V ~ AC, 50 Hz\n`;
-  message += `• Safety Standards: IS 3854:1997 / IS 1293:2019\n\n`;
+  
 
   message += `*PRICING DETAILS:*\n`;
   message += `MRP: ₹${Number(item.mrp).toFixed(2)}\n`;
   message += `*Special Offer Price: ₹${Number(item.offerPrice).toFixed(2)}*\n`;
   message += `*Promotional Savings: ${discountPct}% OFF*\n`;
 
-  if (imageLink) {
-    message += `\n*Product Image Preview:*\n${imageLink}\n`;
-  }
-  message += `━━━━━━━━━━━━━━━━━━━━━\n`;
-  message += `Lucky Cement & Electric • Authorized Dealer`;
+  message += `Lucky Cement & Electric • Havells Authorized Dealer`;
 
   const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
   window.open(waUrl, "_blank");
