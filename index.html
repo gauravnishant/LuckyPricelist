@@ -76,7 +76,6 @@
       </div>
       
       <div class="flex items-center flex-wrap gap-2 text-xs">
-        <!-- PROMINENT SET BASELINE BUTTON IN TOP BAR -->
         <button onclick="promptSetBaseline()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 shadow-md border border-indigo-400/40">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
           <span>💾 Set Baseline</span>
@@ -90,12 +89,7 @@
 
         <button onclick="toggleManageDrawer()" class="bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 font-semibold px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-          <span>Batch Price Editor (<span id="topManagerCount">129</span>)</span>
-        </button>
-
-        <button onclick="promptResetCatalog()" class="text-rose-400 hover:text-rose-300 font-bold px-2 py-1 transition flex items-center gap-1">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-          <span>Reset Defaults</span>
+          <span>Batch Price Editor (<span id="topManagerCount">0</span>)</span>
         </button>
 
         <button onclick="window.print()" class="text-slate-300 hover:text-white font-bold flex items-center gap-1 transition px-2 py-1">
@@ -152,29 +146,29 @@
           Havells Crabtree Adiva, Reo Marvel &amp; Reo Bliss
         </h1>
         <p class="font-hindi text-sm sm:text-base text-slate-300 font-semibold mt-1">
-          लकी सीमेंट एंड इलेक्ट्रिक - क्रैबट्री अदिवा (53), रियो मार्वल (31) एवं रियो ब्लिस (45) मॉड्यूलर स्विच एवं एक्सेसरीज का आधिकारिक मूल्य शेड्यूल।
+          लकी सीमेंट एंड इलेक्ट्रिक - क्रैबट्री अदिवा, रियो मार्वल एवं रियो ब्लिस मॉड्यूलर स्विच एवं एक्सेसरीज का आधिकारिक मूल्य शेड्यूल।
         </p>
 
         <!-- KPI Strip -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-4">
           <div class="bg-white/5 border border-white/10 p-2.5 rounded-xl">
             <span class="text-[10px] text-zinc-400 block uppercase font-bold">Total Catalog</span>
-            <span class="text-lg font-black text-white" id="statTotalItems">129 SKUs</span>
+            <span class="text-lg font-black text-white" id="statTotalItems">0 SKUs</span>
             <span class="font-hindi text-[10px] text-amber-300 block">कुल उत्पाद</span>
           </div>
           <div class="bg-white/5 border border-white/10 p-2.5 rounded-xl">
             <span class="text-[10px] text-zinc-400 block uppercase font-bold">Crabtree Adiva</span>
-            <span class="text-lg font-black text-rose-300" id="statAdivaCount">53 SKUs</span>
+            <span class="text-lg font-black text-rose-300" id="statAdivaCount">0 SKUs</span>
             <span class="font-hindi text-[10px] text-slate-300 block">अल्ट्रा-फ्लैट रेंज</span>
           </div>
           <div class="bg-white/5 border border-white/10 p-2.5 rounded-xl">
             <span class="text-[10px] text-zinc-400 block uppercase font-bold">Reo Marvel</span>
-            <span class="text-lg font-black text-sky-400" id="statMarvelCount">31 SKUs</span>
+            <span class="text-lg font-black text-sky-400" id="statMarvelCount">0 SKUs</span>
             <span class="font-hindi text-[10px] text-slate-300 block">स्मार्ट मॉड्यूलर</span>
           </div>
           <div class="bg-white/5 border border-white/10 p-2.5 rounded-xl">
             <span class="text-[10px] text-zinc-400 block uppercase font-bold">Reo Bliss</span>
-            <span class="text-lg font-black text-amber-300" id="statBlissCount">45 SKUs</span>
+            <span class="text-lg font-black text-amber-300" id="statBlissCount">0 SKUs</span>
             <span class="font-hindi text-[10px] text-slate-300 block">सिल्क व्हाइट रेंज</span>
           </div>
         </div>
@@ -183,11 +177,10 @@
       <!-- Quick Action Card with Baseline Status -->
       <div class="w-full md:w-80 bg-zinc-900/90 rounded-2xl p-4 border border-zinc-700 text-xs shadow-xl backdrop-blur-md">
         <div class="font-bold text-slate-200 uppercase tracking-wider pb-2 border-b border-zinc-800 flex justify-between items-center">
-          <span>Catalog Tools &amp; Baseline</span>
-          <span id="baselineStatusBadge" class="text-indigo-300 bg-indigo-950/80 px-2 py-0.5 rounded text-[10px] font-mono border border-indigo-700/50">Factory Baseline</span>
+          <span>Catalog Tools &amp; Cloud Sync</span>
+          <span class="text-emerald-300 bg-emerald-950/80 px-2 py-0.5 rounded text-[10px] font-mono border border-emerald-700/50">Online Shared</span>
         </div>
         <div class="mt-3 space-y-2">
-          <!-- Button in Hero as well -->
           <button onclick="promptSetBaseline()" class="w-full py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold rounded-xl flex items-center justify-center gap-1.5 transition shadow-sm border border-indigo-400/40">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
             <span>Set Current Prices as Baseline</span>
@@ -196,14 +189,6 @@
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
             <span>Batch Price Editor</span>
           </button>
-          <div class="flex gap-2 pt-0.5">
-            <button onclick="exportDataJSON()" class="flex-1 py-1 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 rounded-lg text-[10px] font-semibold border border-zinc-700 transition">Export</button>
-            <label class="flex-1 py-1 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 rounded-lg text-[10px] font-semibold border border-zinc-700 transition text-center cursor-pointer">
-              Import
-              <input type="file" id="import-json-file" accept=".json" onchange="importDataJSON(event)" class="hidden">
-            </label>
-            <button onclick="promptResetCatalog()" class="flex-1 py-1 bg-zinc-800 hover:bg-rose-900/50 text-rose-300 rounded-lg text-[10px] font-semibold border border-zinc-700 transition">Reset</button>
-          </div>
         </div>
       </div>
     </div>
@@ -214,19 +199,19 @@
       <div class="flex items-center gap-1.5 overflow-x-auto custom-scroll py-0.5 w-full sm:w-auto" id="series-tabs">
         <button onclick="setSeriesFilter('all')" data-series="all" class="series-tab px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-brand-600 text-white shadow-xs">
           <span>All Products (सभी)</span>
-          <span class="px-2 py-0.5 rounded-full bg-black/30 text-[10px]" id="count-all">129</span>
+          <span class="px-2 py-0.5 rounded-full bg-black/30 text-[10px]" id="count-all">0</span>
         </button>
         <button onclick="setSeriesFilter('adiva')" data-series="adiva" class="series-tab px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition flex items-center gap-1.5">
           <span>Crabtree Adiva™</span>
-          <span class="px-2 py-0.5 rounded-full bg-black/30 text-[10px]" id="count-adiva">53</span>
+          <span class="px-2 py-0.5 rounded-full bg-black/30 text-[10px]" id="count-adiva">0</span>
         </button>
         <button onclick="setSeriesFilter('marvel')" data-series="marvel" class="series-tab px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition flex items-center gap-1.5">
           <span>Reo Marvel</span>
-          <span class="px-2 py-0.5 rounded-full bg-black/30 text-[10px]" id="count-marvel">31</span>
+          <span class="px-2 py-0.5 rounded-full bg-black/30 text-[10px]" id="count-marvel">0</span>
         </button>
         <button onclick="setSeriesFilter('bliss')" data-series="bliss" class="series-tab px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition flex items-center gap-1.5">
           <span>Reo Bliss</span>
-          <span class="px-2 py-0.5 rounded-full bg-black/30 text-[10px]" id="count-bliss">45</span>
+          <span class="px-2 py-0.5 rounded-full bg-black/30 text-[10px]" id="count-bliss">0</span>
         </button>
       </div>
       <div class="text-[11px] font-mono text-slate-400 px-3 py-1 bg-black/40 rounded-xl hidden md:block">
@@ -237,7 +222,7 @@
 
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-3 relative z-10 no-print">
     <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-3.5 space-y-3">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex flex-col sm:row items-center justify-between gap-3">
         <!-- Search Input -->
         <div class="relative w-full sm:w-96">
           <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
@@ -260,40 +245,15 @@
         </div>
       </div>
 
-      <!-- Category Filter Buttons -->
-      <div class="flex flex-wrap items-center gap-1.5 pt-2 border-t border-slate-100" id="categoryContainer">
-        <button onclick="setCategoryFilter('all')" data-cat="all" class="cat-pill px-3 py-1.5 rounded-xl text-xs font-bold transition bg-brand-600 text-white shadow-xs">
-          All Categories <span id="cat-count-all" class="ml-1 px-1.5 py-0.2 rounded-full bg-white/20 text-[10px]">129</span>
-        </button>
-        <button onclick="setCategoryFilter('switch')" data-cat="switch" class="cat-pill px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-          Switches &amp; Bell Push <span id="cat-count-switch" class="ml-1 px-1.5 py-0.2 rounded-full bg-slate-200 text-[10px]">31</span>
-        </button>
-        <button onclick="setCategoryFilter('socket')" data-cat="socket" class="cat-pill px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-          Power Sockets <span id="cat-count-socket" class="ml-1 px-1.5 py-0.2 rounded-full bg-slate-200 text-[10px]">9</span>
-        </button>
-        <button onclick="setCategoryFilter('regulator')" data-cat="regulator" class="cat-pill px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-          Fan Regulators <span id="cat-count-regulator" class="ml-1 px-1.5 py-0.2 rounded-full bg-slate-200 text-[10px]">6</span>
-        </button>
-        <button onclick="setCategoryFilter('mcb')" data-cat="mcb" class="cat-pill px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-          Mini MCBs <span id="cat-count-mcb" class="ml-1 px-1.5 py-0.2 rounded-full bg-slate-200 text-[10px]">20</span>
-        </button>
-        <button onclick="setCategoryFilter('plate')" data-cat="plate" class="cat-pill px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-          Plates &amp; Frames <span id="cat-count-plate" class="ml-1 px-1.5 py-0.2 rounded-full bg-slate-200 text-[10px]">33</span>
-        </button>
-        <button onclick="setCategoryFilter('surfacebox')" data-cat="surfacebox" class="cat-pill px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-          Surface Boxes <span id="cat-count-surfacebox" class="ml-1 px-1.5 py-0.2 rounded-full bg-slate-200 text-[10px]">8</span>
-        </button>
-        <button onclick="setCategoryFilter('hospitality')" data-cat="hospitality" class="cat-pill px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
-          Hospitality &amp; Aux <span id="cat-count-hospitality" class="ml-1 px-1.5 py-0.2 rounded-full bg-slate-200 text-[10px]">22</span>
-        </button>
-      </div>
+      <!-- Category Filter Buttons (Rendered Dynamically by app.js) -->
+      <div class="flex flex-wrap items-center gap-1.5 pt-2 border-t border-slate-100" id="categoryContainer"></div>
     </div>
   </section>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full">
     <div class="flex items-center justify-between text-xs text-slate-500 mb-3 px-1 no-print">
       <div>
-        Showing <span id="visibleCount" class="font-bold text-slate-950">129</span> products in active view (Click any product to expand details)
+        Showing <span id="visibleCount" class="font-bold text-slate-950">0</span> products in active view (Click any product to expand details)
       </div>
       <div class="text-[11px] font-mono text-slate-600">
         Hierarchy: <strong class="text-slate-900">MRP</strong> &gt; <strong class="line-through text-rose-500">List Price</strong> &gt; <strong class="text-emerald-600 font-extrabold">Offer</strong>
@@ -302,7 +262,7 @@
 
     <!-- Product Grid Container -->
     <div id="gridContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      <!-- Injected via JavaScript -->
+      <!-- Injected via app.js -->
     </div>
 
     <!-- Table Schedule Container -->
@@ -334,7 +294,7 @@
             </tr>
           </thead>
           <tbody id="tableBody" class="divide-y divide-slate-100 font-medium">
-            <!-- Injected via JavaScript -->
+            <!-- Injected via app.js -->
           </tbody>
         </table>
       </div>
@@ -352,7 +312,7 @@
       </button>
     </div>
 
-    <!-- Printable Formal Sheet Header (Only on Print) -->
+    <!-- Printable Header (Print Only) -->
     <div class="print-only hidden p-4 text-slate-900 border-b border-slate-400 mb-4">
       <div class="flex justify-between items-start">
         <div>
@@ -369,12 +329,11 @@
     </div>
   </main>
 
+  <!-- Product Details Quick Modal -->
   <div id="productQuickModal" class="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm hidden items-center justify-center p-4 no-print" onclick="handleModalBackdropClick(event)">
     <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-slate-200 transform transition-all flex flex-col max-h-[90vh]" onclick="event.stopPropagation()">
-      <!-- Modal Header -->
       <div class="p-4 bg-slate-950 text-white flex justify-between items-center border-b border-slate-800">
         <div class="flex items-center gap-2">
-          <span id="modalSeriesBadge" class="px-2.5 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider">Series</span>
           <span id="modalSkuBadge" class="font-mono text-xs font-bold bg-slate-800 text-amber-300 px-2 py-0.5 rounded border border-slate-700">SKU</span>
         </div>
         <button onclick="closeProductModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
@@ -382,173 +341,93 @@
         </button>
       </div>
 
-      <!-- Modal Body (Scrollable) -->
       <div class="p-6 overflow-y-auto custom-scroll space-y-5 text-slate-800">
         <div class="flex flex-col md:flex-row items-center gap-6">
-          <!-- Vector Visual Frame -->
-          <div class="w-full md:w-56 h-48 bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center justify-center shadow-inner shrink-0" id="modalVisualContainer">
-            <!-- SVG rendered dynamically -->
+          <div class="w-full md:w-56 h-48 bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center justify-center shadow-inner shrink-0 overflow-hidden" id="modalVisualContainer">
+            <!-- Rendered dynamically -->
           </div>
 
-          <!-- Titles & Primary Info -->
           <div class="flex-1 space-y-2 text-center md:text-left">
             <h2 id="modalEnglishName" class="text-lg sm:text-xl font-extrabold text-slate-950 leading-snug">Product Name</h2>
             <p id="modalHindiName" class="font-hindi text-base text-brand-700 font-bold leading-normal">उत्पाद का नाम</p>
-            
-            <div class="flex flex-wrap items-center gap-2 justify-center md:justify-start pt-1">
-              <span id="modalFinishBadge" class="text-xs bg-slate-100 text-slate-700 font-semibold px-2.5 py-1 rounded-lg border border-slate-200">Finish: Standard</span>
-              <span id="modalModulesBadge" class="text-xs bg-slate-100 text-slate-700 font-semibold px-2.5 py-1 rounded-lg border border-slate-200">1 Module</span>
-              <span id="modalPackingBadge" class="text-xs bg-amber-50 text-amber-800 font-bold px-2.5 py-1 rounded-lg border border-amber-200">Pack: 20 N/400 N</span>
-            </div>
-
-            <div class="pt-2">
-              <button onclick="copyModalSku()" class="text-[11px] font-mono font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg border border-slate-300 inline-flex items-center gap-1.5 transition">
-                <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                <span id="copySkuBtnText">Copy SKU Code</span>
-              </button>
-            </div>
           </div>
         </div>
 
-        <!-- Pricing Card Breakdown -->
         <div class="bg-gradient-to-br from-slate-900 via-slate-850 to-slate-900 text-white rounded-2xl p-4 shadow-lg border border-slate-800">
           <div class="text-[10px] uppercase font-bold tracking-wider text-slate-400 mb-2">Verified Dealer Pricing Schedule</div>
           <div class="grid grid-cols-3 gap-3 text-center">
             <div class="bg-white/5 p-2.5 rounded-xl border border-white/5">
-              <span class="text-[10px] text-slate-400 block font-bold uppercase">Striked List Price</span>
+              <span class="text-[10px] text-slate-400 block font-bold uppercase">Striked List</span>
               <span id="modalListPrice" class="text-sm sm:text-base font-bold text-rose-400 line-through">₹ 0.00</span>
             </div>
             <div class="bg-white/5 p-2.5 rounded-xl border border-white/5">
-              <span class="text-[10px] text-slate-400 block font-bold uppercase">Havells Catalog MRP</span>
+              <span class="text-[10px] text-slate-400 block font-bold uppercase">Havells MRP</span>
               <span id="modalMrpPrice" class="text-sm sm:text-base font-bold text-slate-200">₹ 0.00</span>
             </div>
             <div class="bg-brand-600/30 p-2.5 rounded-xl border border-brand-500/40">
-              <span class="text-[10px] text-brand-300 block font-extrabold uppercase">Special Offer Price</span>
+              <span class="text-[10px] text-brand-300 block font-extrabold uppercase">Special Offer</span>
               <span id="modalOfferPrice" class="text-base sm:text-xl font-black text-amber-300">₹ 0.00</span>
             </div>
           </div>
           <div class="mt-3 pt-2.5 border-t border-white/10 flex justify-between items-center text-xs">
-            <span class="text-slate-400 font-medium">Customer Promotional Savings:</span>
+            <span class="text-slate-400 font-medium">Customer Savings:</span>
             <span id="modalDiscountBadge" class="bg-emerald-500 text-white text-xs font-black px-2.5 py-0.5 rounded-full shadow-sm">0% OFF MRP</span>
-          </div>
-        </div>
-
-        <!-- Technical Specifications Table -->
-        <div class="space-y-2">
-          <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            <span>Technical &amp; Quality Specifications</span>
-          </h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-            <div class="p-2 bg-slate-50 rounded-xl border border-slate-200">
-              <span class="text-slate-400 block text-[10px]">Rated Voltage &amp; Frequency</span>
-              <span class="font-bold text-slate-800">240 V ~ AC, 50 Hz</span>
-            </div>
-            <div class="p-2 bg-slate-50 rounded-xl border border-slate-200">
-              <span class="text-slate-400 block text-[10px]">Material Grade</span>
-              <span class="font-bold text-slate-800">UV-Stabilized Fire-Retardant Polycarbonate (FR Grade)</span>
-            </div>
-            <div class="p-2 bg-slate-50 rounded-xl border border-slate-200">
-              <span class="text-slate-400 block text-[10px]">Safety Standards</span>
-              <span class="font-bold text-slate-800">IS 3854:1997 / IS 1293:2019 / RoHs Compliant</span>
-            </div>
-            <div class="p-2 bg-slate-50 rounded-xl border border-slate-200">
-              <span class="text-slate-400 block text-[10px]">Contacts / Internal Mechanism</span>
-              <span class="font-bold text-slate-800">Silver Cadmium Oxide / Phosphor Bronze Shutter Spring</span>
-            </div>
           </div>
         </div>
       </div>
 
-      <!-- Modal Footer Actions -->
-      <div class="p-4 bg-slate-50 border-t border-slate-200 flex justify-between items-center text-xs">
-        <button id="modalDeleteBtn" class="text-rose-600 hover:text-rose-700 font-bold px-3 py-1.5 rounded-lg hover:bg-rose-50 transition flex items-center gap-1">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-          <span>Remove SKU</span>
+      <div class="p-4 bg-slate-50 border-t border-slate-200 flex justify-end text-xs">
+        <button onclick="closeProductModal()" class="px-5 py-2 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition">
+          Close
         </button>
-        <div class="flex items-center gap-2">
-          <button id="modalEditBtn" class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold rounded-xl transition flex items-center gap-1.5 shadow-sm">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-            <span>Edit in Batch Editor</span>
-          </button>
-          <button onclick="closeProductModal()" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition">
-            Close
-          </button>
-        </div>
       </div>
     </div>
   </div>
 
+  <!-- Batch Price Editor Drawer -->
   <aside id="manageDrawer" class="fixed inset-y-0 right-0 z-50 w-full max-w-4xl bg-white shadow-2xl border-l border-slate-200 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col no-print">
-    <!-- Drawer Header -->
     <div class="p-4 bg-slate-950 text-white flex items-center justify-between border-b border-slate-800">
       <div>
         <h3 class="font-bold text-sm flex items-center gap-2">
           <span>🛠 Batch Price &amp; Inventory Customizer</span>
-          <span class="text-[10px] bg-brand-600 px-2 py-0.5 rounded-full font-mono font-bold" id="drawerBadgeCount">129 items</span>
+          <span class="text-[10px] bg-brand-600 px-2 py-0.5 rounded-full font-mono font-bold" id="drawerBadgeCount">0 items</span>
         </h3>
-        <p class="text-xs text-slate-400 mt-0.5 font-hindi">सीधे सूची मूल्य, MRP व ऑफर मूल्य संपादित करें (ऑटो-सेव्ड)</p>
+        <p class="text-xs text-slate-400 mt-0.5 font-hindi">सीधे सूची मूल्य, MRP व ऑफर मूल्य संपादित करें (क्लाउड ऑटो-सिंक)</p>
       </div>
       <button onclick="toggleManageDrawer()" class="text-slate-400 hover:text-white p-1 rounded-lg">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
 
-    <!-- Drawer Toolbar: Series Tabs & Search -->
     <div class="p-3 bg-slate-900 border-b border-slate-800 space-y-2.5">
-      <!-- In-Drawer Series Filter Tabs -->
       <div class="flex items-center gap-1.5 overflow-x-auto custom-scroll pb-1" id="drawerSeriesTabs">
         <button onclick="setDrawerSeriesFilter('all')" data-dseries="all" class="drawer-series-tab px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-brand-600 text-white shadow-xs">
           <span>All Series</span>
-          <span class="px-1.5 py-0.2 rounded-full bg-black/30 text-[10px]" id="dcount-all">129</span>
+          <span class="px-1.5 py-0.2 rounded-full bg-black/30 text-[10px]" id="dcount-all">0</span>
         </button>
         <button onclick="setDrawerSeriesFilter('adiva')" data-dseries="adiva" class="drawer-series-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition flex items-center gap-1.5">
           <span>Crabtree Adiva</span>
-          <span class="px-1.5 py-0.2 rounded-full bg-black/30 text-[10px]" id="dcount-adiva">53</span>
+          <span class="px-1.5 py-0.2 rounded-full bg-black/30 text-[10px]" id="dcount-adiva">0</span>
         </button>
         <button onclick="setDrawerSeriesFilter('marvel')" data-dseries="marvel" class="drawer-series-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition flex items-center gap-1.5">
           <span>Reo Marvel</span>
-          <span class="px-1.5 py-0.2 rounded-full bg-black/30 text-[10px]" id="dcount-marvel">31</span>
+          <span class="px-1.5 py-0.2 rounded-full bg-black/30 text-[10px]" id="dcount-marvel">0</span>
         </button>
         <button onclick="setDrawerSeriesFilter('bliss')" data-dseries="bliss" class="drawer-series-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition flex items-center gap-1.5">
           <span>Reo Bliss</span>
-          <span class="px-1.5 py-0.2 rounded-full bg-black/30 text-[10px]" id="dcount-bliss">45</span>
+          <span class="px-1.5 py-0.2 rounded-full bg-black/30 text-[10px]" id="dcount-bliss">0</span>
         </button>
       </div>
 
-      <!-- In-Drawer Search & Tools Bar -->
-      <div class="flex flex-wrap items-center justify-between gap-2 pt-1 text-xs">
-        <div class="relative flex-1 min-w-[200px]">
-          <span class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none text-slate-400">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          </span>
-          <input type="text" id="drawerSearchInput" oninput="handleDrawerSearch(this.value)" placeholder="Filter by product name, SKU or हिंदी..." 
-            class="w-full pl-8 pr-2.5 py-1.5 bg-slate-800 border border-slate-700 rounded-lg text-white text-xs placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-brand-500">
-        </div>
-        
-        <div class="flex items-center gap-2">
-          <!-- In-Drawer Set Baseline Button -->
-          <button onclick="promptSetBaseline()" class="px-2.5 py-1 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded flex items-center gap-1 border border-indigo-400/40">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
-            <span>Set Baseline </span>
-          </button>
-          <button onclick="exportDataJSON()" class="px-2 py-1 bg-slate-800 border border-slate-700 hover:bg-slate-700 text-slate-200 rounded font-semibold flex items-center gap-1">
-            <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-            Export
-          </button>
-          <button onclick="document.getElementById('import-file-input').click()" class="px-2 py-1 bg-slate-800 border border-slate-700 hover:bg-slate-700 text-slate-200 rounded font-semibold flex items-center gap-1">
-            <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
-            Import
-          </button>
-          <input type="file" id="import-file-input" class="hidden" accept=".json" onchange="importDataJSON(event)">
-          <button onclick="promptResetCatalog()" class="text-rose-400 hover:text-rose-300 font-bold underline px-1">
-            Reset Defaults
-          </button>
-        </div>
+      <div class="relative w-full">
+        <span class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none text-slate-400">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </span>
+        <input type="text" id="drawerSearchInput" oninput="handleDrawerSearch(this.value)" placeholder="Filter by product name, SKU or हिंदी..." 
+          class="w-full pl-8 pr-2.5 py-1.5 bg-slate-800 border border-slate-700 rounded-lg text-white text-xs placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-brand-500">
       </div>
     </div>
 
-    <!-- Drawer Items Table -->
     <div class="flex-1 overflow-y-auto p-3 custom-scroll">
       <table class="w-full text-left text-xs border-collapse">
         <thead class="bg-slate-100 text-slate-700 uppercase text-[9px] font-bold sticky top-0 z-10 border-b border-slate-200">
@@ -563,18 +442,18 @@
           </tr>
         </thead>
         <tbody id="drawerTableBody" class="divide-y divide-slate-100 font-medium">
-          <!-- Injected via renderDrawer() -->
+          <!-- Injected via app.js -->
         </tbody>
       </table>
     </div>
 
-    <!-- Drawer Footer -->
     <div class="p-3 bg-slate-100 border-t border-slate-200 flex justify-between items-center text-xs">
       <span class="text-slate-500 font-medium">Changes sync immediately with card &amp; table views</span>
       <button onclick="toggleManageDrawer()" class="px-5 py-2 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition">Done Editing</button>
     </div>
   </aside>
 
+  <!-- Add Product Modal Form -->
   <div id="addModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs hidden items-center justify-center p-4 no-print">
     <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200">
       <div class="p-4 bg-slate-950 text-white flex justify-between items-center">
@@ -613,23 +492,23 @@
           <input type="text" id="newNameHi" required placeholder="उदा. रियो ब्लिस 10 AX 1-वे स्विच" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 font-hindi focus:ring-2 focus:ring-brand-500">
         </div>
 
+        <!-- Dynamic Category Autocomplete & Packing Fields -->
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block font-bold text-slate-700 mb-1">Category *</label>
-            <select id="newCategory" required class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 font-semibold">
-              <option value="switch">Switch &amp; Bell Push</option>
-              <option value="socket">Power Socket</option>
-              <option value="regulator">Fan Regulator</option>
-              <option value="mcb">Mini MCB</option>
-              <option value="plate">Plates &amp; Frames</option>
-              <option value="surfacebox">Surface Box</option>
-              <option value="hospitality">Hospitality &amp; Aux</option>
-            </select>
+            <input list="categoryDatalist" id="newCategory" required placeholder="Select or type new..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 font-semibold">
+            <datalist id="categoryDatalist"></datalist>
           </div>
           <div>
             <label class="block font-bold text-slate-700 mb-1">Std / Master Packing</label>
             <input type="text" id="newPacking" placeholder="e.g. 20 N/400 N" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 font-medium">
           </div>
+        </div>
+
+        <!-- Custom Image URL Field -->
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Product Image Path / URL (Optional)</label>
+          <input type="text" id="newImage" placeholder="images/switch.jpg or https://..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-2 font-medium">
         </div>
 
         <div class="grid grid-cols-3 gap-2.5 pt-1 bg-amber-50/70 p-3 rounded-xl border border-amber-200">
@@ -655,6 +534,7 @@
     </div>
   </div>
 
+  <!-- Baseline Password Modal -->
   <div id="setBaselineModal" class="fixed inset-0 z-[60] bg-slate-950/75 backdrop-blur-xs hidden items-center justify-center p-4 no-print">
     <div class="bg-white rounded-3xl max-w-sm w-full overflow-hidden shadow-2xl border border-indigo-200">
       <div class="p-4 bg-indigo-950 text-white flex justify-between items-center">
@@ -668,7 +548,7 @@
       </div>
       <div class="p-5">
         <p class="text-xs text-slate-600 mb-3 leading-relaxed">
-          This will lock all currently displayed prices, SKUs, and items as your <strong>new permanent default baseline</strong>. Enter authorized master password to confirm:
+          Lock current prices across all devices. Enter authorized password (<strong>952593</strong>):
         </p>
         <label class="block font-bold text-slate-800 mb-1 text-xs">Enter Password :</label>
         <input type="password" id="baselinePasswordInput" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm font-mono focus:ring-2 focus:ring-indigo-500 mb-4" placeholder="••••••">
@@ -682,42 +562,7 @@
     </div>
   </div>
 
-  <div id="passwordModal" class="fixed inset-0 z-[60] bg-slate-950/70 backdrop-blur-xs hidden items-center justify-center p-4 no-print">
-    <div class="bg-white rounded-3xl max-w-sm w-full overflow-hidden shadow-2xl border border-slate-200">
-      <div class="p-4 bg-slate-950 text-white flex justify-between items-center">
-        <h3 class="font-bold text-sm">Reset Catalog Authentication</h3>
-        <button onclick="closePasswordModal()" class="text-slate-400 hover:text-white">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-      </div>
-      <div class="p-5">
-        <p class="text-xs text-slate-600 mb-3">Enter the administrative password to reset the catalog:</p>
-        <label class="block font-bold text-slate-700 mb-1 text-xs">Password (lucky123):</label>
-        <input type="password" id="resetPasswordInput" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm font-mono focus:ring-2 focus:ring-brand-500 mb-4" placeholder="••••••••">
-        <div class="flex justify-end gap-2">
-          <button onclick="closePasswordModal()" class="px-4 py-2 border border-slate-300 text-slate-700 rounded-xl text-xs font-semibold hover:bg-slate-50">Cancel</button>
-          <button onclick="verifyPasswordForReset()" class="px-5 py-2 bg-brand-600 text-white rounded-xl text-xs font-bold hover:bg-brand-500 shadow-md">Next</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="confirmResetModal" class="fixed inset-0 z-[60] bg-slate-950/70 backdrop-blur-xs hidden items-center justify-center p-4 no-print">
-    <div class="bg-white rounded-3xl max-w-sm w-full overflow-hidden shadow-2xl border border-slate-200">
-      <div class="p-5 text-center">
-        <div class="w-12 h-12 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center mx-auto mb-3">
-           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-        </div>
-        <h3 class="font-bold text-slate-900 text-lg mb-2">Confirm Catalog Reset?</h3>
-        <p class="text-xs text-slate-500 mb-5" id="resetWarningText">Are you sure you want to reset all products back to your baseline? Current uncommitted changes will be discarded.</p>
-        <div class="flex justify-center gap-3">
-          <button onclick="closeConfirmModal()" class="px-4 py-2 border border-slate-300 text-slate-700 rounded-xl text-xs font-semibold hover:bg-slate-50">Cancel</button>
-          <button onclick="executeCatalogReset()" class="px-5 py-2 bg-rose-600 text-white rounded-xl text-xs font-bold hover:bg-rose-500 shadow-md">Yes, Reset Now</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <!-- General Message Modal -->
   <div id="messageBoxModal" class="fixed inset-0 z-[70] bg-slate-950/70 backdrop-blur-xs hidden items-center justify-center p-4 no-print">
     <div class="bg-white rounded-3xl max-w-sm w-full overflow-hidden shadow-2xl border border-slate-200">
       <div class="p-5 text-center">
@@ -731,7 +576,7 @@
     </div>
   </div>
 
-  <!-- Floating Toast Notification -->
+  <!-- Toast Notification -->
   <div id="undoToast" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-50 bg-slate-900 text-white px-4 py-2.5 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3 text-xs hidden no-print">
     <span id="toastMessage">Action completed successfully</span>
     <button id="toastUndoBtn" onclick="undoLastDelete()" class="font-extrabold text-amber-400 hover:text-amber-300 underline hidden">Undo</button>
@@ -750,995 +595,7 @@
     </div>
   </footer>
 
-  <script>
-    /**
-     * Master Product Catalog:
-     * - Reo Bliss (45 SKUs)
-     * - Reo Marvel (31 SKUs)
-     * - Crabtree Adiva (53 SKUs)
-     * Total: 129 Verified Products
-     */
-    const INITIAL_CATALOG = [
-      // =========================================================================
-      // REO BLISS SERIES (45 SKUs)
-      // =========================================================================
-      { id: "bliss-1", series: "bliss", sku: "AHBSXXW101", name: "10 AX 1 Way Switch Silk White Reo Bliss", nameHi: "रियो ब्लिस 10 AX 1-वे स्विच (सिल्क व्हाइट)", category: "switch", finish: "Silk White", modules: 1, packing: "20 N/400 N", listPrice: 27.00, mrp: 45.00, offerPrice: 21.00 },
-      { id: "bliss-2", series: "bliss", sku: "AHBSXXW102", name: "10 AX 2 Way Switch Silk White Reo Bliss", nameHi: "रियो ब्लिस 10 AX 2-वे स्विच", category: "switch", finish: "Silk White", modules: 1, packing: "20 N/120 N", listPrice: 73.00, mrp: 110.00, offerPrice: 56.00 },
-      { id: "bliss-3", series: "bliss", sku: "AHBSBXW101", name: "10 A 1 Way Bell Push Switch Reo Bliss", nameHi: "रियो ब्लिस 10 A बेल पुश 1-वे स्विच", category: "switch", finish: "Silk White", modules: 1, packing: "20 N/120 N", listPrice: 80.00, mrp: 120.00, offerPrice: 62.00 },
-      { id: "bliss-4", series: "bliss", sku: "AHBMBIW101", name: "10 A Mega Bell Push with Indicator Reo Bliss", nameHi: "रियो ब्लिस 10 A मेगा बेल पुश (इंडिकेटर युक्त)", category: "switch", finish: "Silk White", modules: 2, packing: "10 N/60 N", listPrice: 102.00, mrp: 165.00, offerPrice: 79.00 },
-      { id: "bliss-5", series: "bliss", sku: "AHBSXXW201", name: "20 A 1 Way Switch Silk White Reo Bliss", nameHi: "रियो ब्लिस 20 A 1-वे पावर स्विच", category: "switch", finish: "Silk White", modules: 1, packing: "20 N/120 N", listPrice: 93.00, mrp: 145.00, offerPrice: 72.00 },
-      { id: "bliss-6", series: "bliss", sku: "AHBSXXW202", name: "20 A 2 Way Switch Reo Bliss", nameHi: "रियो ब्लिस 20 A 2-वे स्विच", category: "switch", finish: "Silk White", modules: 1, packing: "20 N/60 N", listPrice: 136.00, mrp: 210.00, offerPrice: 105.00 },
-      { id: "bliss-7", series: "bliss", sku: "AHBSXIW201", name: "20 A 1 Way Switch with Indicator Reo Bliss", nameHi: "रियो ब्लिस 20 A 1-वे स्विच (इंडिकेटर युक्त)", category: "switch", finish: "Silk White", modules: 1, packing: "20 N/60 N", listPrice: 119.00, mrp: 185.00, offerPrice: 92.00 },
-      { id: "bliss-8", series: "bliss", sku: "AHBMXIW201", name: "20 AX 1 Way Mega Ind. Switch Reo Bliss", nameHi: "रियो ब्लिस 20 AX मेगा 1-वे इंडिकेटर स्विच (2M)", category: "switch", finish: "Silk White", modules: 2, packing: "10 N/60 N", listPrice: 157.00, mrp: 245.00, offerPrice: 122.00 },
-      { id: "bliss-9", series: "bliss", sku: "AHBSDIW321", name: "32 A DP Switch with Indicator Reo Bliss", nameHi: "रियो ब्लिस 32 A DP मेन स्विच (इंडिकेटर युक्त)", category: "switch", finish: "Silk White", modules: 2, packing: "10 N/60 N", listPrice: 194.00, mrp: 310.00, offerPrice: 151.00 },
-      { id: "bliss-10", series: "bliss", sku: "AHBKSWW063", name: "6 A 3 Pin Socket with Shutter (ISI) Reo Bliss", nameHi: "रियो ब्लिस 6 A 3-पिन शटर्ड सॉकेट (ISI)", category: "socket", finish: "Silk White", modules: 2, packing: "10 N/60 N", listPrice: 67.00, mrp: 115.00, offerPrice: 52.00 },
-      { id: "bliss-11", series: "bliss", sku: "AHBKCXW062", name: "6 A / 16 A Twin Socket with Shutter Reo Bliss", nameHi: "रियो ब्लिस 6 A/16 A ट्विन सॉकेट (शटर्ड)", category: "socket", finish: "Silk White", modules: 2, packing: "10 N/120 N", listPrice: 154.00, mrp: 240.00, offerPrice: 119.00 },
-      { id: "bliss-12", series: "bliss", sku: "AHBKCXW251", name: "6 A / 16 A Heavy Duty Socket with Shutter Reo Bliss", nameHi: "रियो ब्लिस 16 A हैवी ड्यूटी शटर्ड पावर सॉकेट", category: "socket", finish: "Silk White", modules: 2, packing: "10 N/120 N", listPrice: 173.00, mrp: 275.00, offerPrice: 134.00 },
-      { id: "bliss-13", series: "bliss", sku: "AHBRFXW001", name: "1 M Fan Regulator 4 Step Reo Bliss", nameHi: "रियो ब्लिस 1M 4-स्टेप फैन रेगुलेटर", category: "regulator", finish: "Silk White", modules: 1, packing: "10 N/120 N", listPrice: 300.00, mrp: 460.00, offerPrice: 234.00 },
-      { id: "bliss-14", series: "bliss", sku: "AHBRFXW002", name: "2 M Fan Regulator 5 Step Reo Bliss", nameHi: "रियो ब्लिस 2M 5-स्टेप 360° फैन रेगुलेटर", category: "regulator", finish: "Silk White", modules: 2, packing: "10 N/60 N", listPrice: 347.00, mrp: 530.00, offerPrice: 270.00 },
-      { id: "bliss-15", series: "bliss", sku: "AHBPIBWX01", name: "Blank Plate Reo Bliss (1M)", nameHi: "रियो ब्लिस 1M डमी ब्लैंक प्लेट", category: "hospitality", finish: "Silk White", modules: 1, packing: "20 N/120 N", listPrice: 20.00, mrp: 35.00, offerPrice: 15.00 },
-      { id: "bliss-16", series: "bliss", sku: "AHBILIW061", name: "Night Lamp Indicator Reo Bliss", nameHi: "रियो ब्लिस नाइट लैंप / इंडिकेटर", category: "hospitality", finish: "Silk White", modules: 1, packing: "20 N/120 N", listPrice: 75.00, mrp: 120.00, offerPrice: 58.00 },
-      { id: "bliss-17", series: "bliss", sku: "AHBBXXW001", name: "Buzzer Reo Bliss (2M)", nameHi: "रियो ब्लिस 2M इलेक्ट्रॉनिक बजर", category: "hospitality", finish: "Silk White", modules: 2, packing: "6 N/54 N", listPrice: 289.00, mrp: 440.00, offerPrice: 225.00 },
-      { id: "bliss-18", series: "bliss", sku: "AHBSEXW320", name: "Mechanical Key Tag Switch Reo Bliss", nameHi: "रियो ब्लिस मैकेनिकल की-टैग स्विच", category: "hospitality", finish: "Silk White", modules: 2, packing: "1 N/28 N", listPrice: 641.00, mrp: 980.00, offerPrice: 498.00 },
-      { id: "bliss-19", series: "bliss", sku: "AHBFPXW061", name: "KIT KAT Fuse 16A Reo Bliss", nameHi: "रियो ब्लिस 16A किट-कैट फ्यूज यूनिट", category: "hospitality", finish: "Silk White", modules: 1, packing: "20 N/120 N", listPrice: 93.00, mrp: 145.00, offerPrice: 72.00 },
-      { id: "bliss-20", series: "bliss", sku: "AHBO252504", name: "25 A Motor Starter Switch Reo Bliss", nameHi: "रियो ब्लिस 25 A मोटर स्टार्टर स्विच", category: "hospitality", finish: "Silk White", modules: 2, packing: "10 N/80 N", listPrice: 487.00, mrp: 750.00, offerPrice: 379.00 },
-      { id: "bliss-21", series: "bliss", sku: "AHBPFCWL00", name: "2 M LED Footlight Reo Bliss", nameHi: "रियो ब्लिस 2M नाइट स्टेप फुटलाइट", category: "hospitality", finish: "Silk White", modules: 2, packing: "6 N/54 N", listPrice: 514.00, mrp: 790.00, offerPrice: 399.00 },
-      { id: "bliss-22", series: "bliss", sku: "DHEMCSPA010", name: "10 A SP C MINI MCB Reo Bliss", nameHi: "रियो ब्लिस 10 A सिंगल पोल मिनी MCB (C-कर्व)", category: "mcb", finish: "Silk White", modules: 1, packing: "12 N/120 N", listPrice: 220.00, mrp: 340.00, offerPrice: 172.00 },
-      { id: "bliss-23", series: "bliss", sku: "DHEMCSPA016", name: "16 A SP C MINI MCB Reo Bliss", nameHi: "रियो ब्लिस 16 A सिंगल पोल मिनी MCB (C-कर्व)", category: "mcb", finish: "Silk White", modules: 1, packing: "12 N/120 N", listPrice: 220.00, mrp: 340.00, offerPrice: 172.00 },
-      { id: "bliss-24", series: "bliss", sku: "DHEMCSPA025", name: "25 A SP C MINI MCB Reo Bliss", nameHi: "रियो ब्लिस 25 A सिंगल पोल मिनी MCB (C-कर्व)", category: "mcb", finish: "Silk White", modules: 1, packing: "12 N/120 N", listPrice: 232.00, mrp: 360.00, offerPrice: 181.00 },
-      { id: "bliss-25", series: "bliss", sku: "DHEMCSPA032", name: "32 A SP C MINI MCB Reo Bliss", nameHi: "रियो ब्लिस 32 A सिंगल पोल मिनी MCB (C-कर्व)", category: "mcb", finish: "Silk White", modules: 1, packing: "12 N/120 N", listPrice: 244.00, mrp: 375.00, offerPrice: 190.00 },
-      { id: "bliss-26", series: "bliss", sku: "DHEMCDPA032", name: "32 A DP C MINI MCB Reo Bliss", nameHi: "रियो ब्लिस 32 A डबल पोल मिनी MCB (C-कर्व)", category: "mcb", finish: "Silk White", modules: 2, packing: "6 N/60 N", listPrice: 439.00, mrp: 675.00, offerPrice: 342.00 },
-      { id: "bliss-27", series: "bliss", sku: "AHBPICWV01", name: "1 M Combination Plate Silk White Reo Bliss", nameHi: "रियो ब्लिस सिल्क व्हाइट 1M कॉम्बिनेशन प्लेट", category: "plate", finish: "Silk White", modules: 1, packing: "5 N/80 N", listPrice: 64.00, mrp: 98.00, offerPrice: 49.00 },
-      { id: "bliss-28", series: "bliss", sku: "AHBPICWV02", name: "2 M Combination Plate Silk White Reo Bliss", nameHi: "रियो ब्लिस सिल्क व्हाइट 2M कॉम्बिनेशन प्लेट", category: "plate", finish: "Silk White", modules: 2, packing: "5 N/80 N", listPrice: 64.00, mrp: 98.00, offerPrice: 49.00 },
-      { id: "bliss-29", series: "bliss", sku: "AHBPICWV03", name: "3 M Combination Plate Silk White Reo Bliss", nameHi: "रियो ब्लिस सिल्क व्हाइट 3M कॉम्बिनेशन प्लेट", category: "plate", finish: "Silk White", modules: 3, packing: "5 N/80 N", listPrice: 88.00, mrp: 135.00, offerPrice: 68.00 },
-      { id: "bliss-30", series: "bliss", sku: "AHBPICWV04", name: "4 M Combination Plate Silk White Reo Bliss", nameHi: "रियो ब्लिस सिल्क व्हाइट 4M कॉम्बिनेशन प्लेट", category: "plate", finish: "Silk White", modules: 4, packing: "5 N/80 N", listPrice: 98.00, mrp: 150.00, offerPrice: 76.00 },
-      { id: "bliss-31", series: "bliss", sku: "AHBPICWV06", name: "6 M Combination Plate Silk White Reo Bliss", nameHi: "रियो ब्लिस सिल्क व्हाइट 6M कॉम्बिनेशन प्लेट", category: "plate", finish: "Silk White", modules: 6, packing: "5 N/60 N", listPrice: 138.00, mrp: 215.00, offerPrice: 108.00 },
-      { id: "bliss-32", series: "bliss", sku: "AHBPICWV08", name: "8 M Combination Plate (Square) Reo Bliss", nameHi: "रियो ब्लिस सिल्क व्हाइट 8M चौकोर प्लेट", category: "plate", finish: "Silk White", modules: 8, packing: "5 N/60 N", listPrice: 190.00, mrp: 295.00, offerPrice: 148.00 },
-      { id: "bliss-33", series: "bliss", sku: "AHBPICWH08", name: "8 M-H Combination Plate (Horizontal) Reo Bliss", nameHi: "रियो ब्लिस सिल्क व्हाइट 8M-H हॉरिजॉन्टल प्लेट", category: "plate", finish: "Silk White", modules: 8, packing: "5 N/60 N", listPrice: 190.00, mrp: 295.00, offerPrice: 148.00 },
-      { id: "bliss-34", series: "bliss", sku: "AHBPICWV09", name: "9 M Combination Plate Silk White Reo Bliss", nameHi: "रियो ब्लिस सिल्क व्हाइट 9M कॉम्बिनेशन प्लेट", category: "plate", finish: "Silk White", modules: 9, packing: "5 N/60 N", listPrice: 206.00, mrp: 320.00, offerPrice: 161.00 },
-      { id: "bliss-35", series: "bliss", sku: "AHBPICWV12", name: "12 M Combination Plate Silk White Reo Bliss", nameHi: "रियो ब्लिस सिल्क व्हाइट 12M कॉम्बिनेशन प्लेट", category: "plate", finish: "Silk White", modules: 12, packing: "5 N/40 N", listPrice: 225.00, mrp: 350.00, offerPrice: 175.00 },
-      { id: "bliss-36", series: "bliss", sku: "AHBPICWV16", name: "16 M Combination Plate Silk White Reo Bliss", nameHi: "रियो ब्लिस सिल्क व्हाइट 16M कॉम्बिनेशन प्लेट", category: "plate", finish: "Silk White", modules: 16, packing: "5 N/40 N", listPrice: 247.00, mrp: 385.00, offerPrice: 192.00 },
-      { id: "bliss-37", series: "bliss", sku: "AHBPICWV18", name: "18 M Combination Plate Silk White Reo Bliss", nameHi: "रियो ब्लिस सिल्क व्हाइट 18M कॉम्बिनेशन प्लेट", category: "plate", finish: "Silk White", modules: 18, packing: "5 N/30 N", listPrice: 259.00, mrp: 400.00, offerPrice: 202.00 },
-      { id: "bliss-38", series: "bliss", sku: "AHBXMIWX01", name: "1 / 2 M Surface Box (9x9 cm / 3x3 inch) Reo Bliss", nameHi: "रियो ब्लिस 1/2M सरफेस माउंटिंग बॉक्स (9x9 cm)", category: "surfacebox", finish: "White", modules: 2, packing: "60 N", listPrice: 76.00, mrp: 118.00, offerPrice: 59.00 },
-      { id: "bliss-39", series: "bliss", sku: "AHBXMIWX03", name: "3 M Surface Box (12x9 cm / 4x3 inch) Reo Bliss", nameHi: "रियो ब्लिस 3M सरफेस माउंटिंग बॉक्स (12x9 cm)", category: "surfacebox", finish: "White", modules: 3, packing: "40 N", listPrice: 94.00, mrp: 145.00, offerPrice: 73.00 },
-      { id: "bliss-40", series: "bliss", sku: "AHBXMIWX04", name: "4 M Surface Box (15x9 cm / 5x3 inch) Reo Bliss", nameHi: "रियो ब्लिस 4M सरफेस माउंटिंग बॉक्स (15x9 cm)", category: "surfacebox", finish: "White", modules: 4, packing: "30 N", listPrice: 121.00, mrp: 188.00, offerPrice: 94.00 },
-      { id: "bliss-41", series: "bliss", sku: "AHBXMIWX06", name: "6 M Surface Box (22.4x9 cm / 8x3 inch) Reo Bliss", nameHi: "रियो ब्लिस 6M सरफेस माउंटिंग बॉक्स (22.4x9 cm)", category: "surfacebox", finish: "White", modules: 6, packing: "20 N", listPrice: 146.00, mrp: 225.00, offerPrice: 114.00 },
-      { id: "bliss-42", series: "bliss", sku: "AHBXMIWV08", name: "8 M Square Surface Box (15x15 cm / 5x5 inch) Reo Bliss", nameHi: "रियो ब्लिस 8M चौकोर सरफेस बॉक्स (15x15 cm)", category: "surfacebox", finish: "White", modules: 8, packing: "20 N", listPrice: 198.00, mrp: 305.00, offerPrice: 154.00 },
-      { id: "bliss-43", series: "bliss", sku: "AHBXMIWX08", name: "8 M (H) Horizontal Surface Box (24.1x9 cm / 9x3 inch)", nameHi: "रियो ब्लिस 8M हॉरिजॉन्टल सरफेस बॉक्स (24.1x9 cm)", category: "surfacebox", finish: "White", modules: 8, packing: "20 N", listPrice: 198.00, mrp: 305.00, offerPrice: 154.00 },
-      { id: "bliss-44", series: "bliss", sku: "AHBXMIWX12", name: "12 M Surface Box (22.4x15 cm / 8x6 inch) Reo Bliss", nameHi: "रियो ब्लिस 12M सरफेस माउंटिंग बॉक्स (22.4x15 cm)", category: "surfacebox", finish: "White", modules: 12, packing: "10 N", listPrice: 254.00, mrp: 395.00, offerPrice: 198.00 },
-      { id: "bliss-45", series: "bliss", sku: "AHBXMIWX18", name: "18 M Surface Box (22.4x22.4 cm / 9x8 inch) Reo Bliss", nameHi: "रियो ब्लिस 18M सरफेस माउंटिंग बॉक्स (22.4x22.4 cm)", category: "surfacebox", finish: "White", modules: 18, packing: "05 N", listPrice: 379.00, mrp: 585.00, offerPrice: 295.00 },
-
-      // =========================================================================
-      // REO MARVEL SERIES (31 SKUs)
-      // =========================================================================
-      { id: "marvel-1", series: "marvel", sku: "AHVSXXW060", name: "6 AX 1 Way Switch Reo Marvel", nameHi: "रियो मार्वल 6 AX 1-वे स्विच", category: "switch", finish: "White", modules: 1, packing: "20 N/400 N", listPrice: 26.00, mrp: 42.00, offerPrice: 20.00 },
-      { id: "marvel-2", series: "marvel", sku: "AHVSXXW062", name: "6 AX 2 Way Switch Reo Marvel", nameHi: "रियो मार्वल 6 AX 2-वे स्विच", category: "switch", finish: "White", modules: 1, packing: "20 N/120 N", listPrice: 74.00, mrp: 115.00, offerPrice: 57.00 },
-      { id: "marvel-3", series: "marvel", sku: "AHVSBIW061", name: "6 A Bell Push 1M with Ind Reo Marvel", nameHi: "रियो मार्वल 6 A बेल पुश (इंडिकेटर युक्त 1M)", category: "switch", finish: "White", modules: 1, packing: "20 N/120 N", listPrice: 86.00, mrp: 135.00, offerPrice: 67.00 },
-      { id: "marvel-4", series: "marvel", sku: "AHVMBIW061", name: "6 A Bell Push 2M with Ind Reo Marvel", nameHi: "रियो मार्वल 6 A मेगा बेल पुश (इंडिकेटर युक्त 2M)", category: "switch", finish: "White", modules: 2, packing: "20 N/120 N", listPrice: 105.00, mrp: 165.00, offerPrice: 82.00 },
-      { id: "marvel-5", series: "marvel", sku: "AHVSXXW161", name: "16 AX 1 Way Switch Reo Marvel", nameHi: "रियो मार्वल 16 AX 1-वे पावर स्विच", category: "switch", finish: "White", modules: 1, packing: "20 N/60 N", listPrice: 86.00, mrp: 135.00, offerPrice: 67.00 },
-      { id: "marvel-6", series: "marvel", sku: "AHVSXIW161", name: "16 AX 1 Way Switch with Ind Reo Marvel", nameHi: "रियो मार्वल 16 AX 1-वे स्विच (इंडिकेटर युक्त)", category: "switch", finish: "White", modules: 1, packing: "20 N/60 N", listPrice: 119.00, mrp: 185.00, offerPrice: 93.00 },
-      { id: "marvel-7", series: "marvel", sku: "AHVSXXW251", name: "25 A 1 Way Switch with Ind Reo Marvel", nameHi: "रियो मार्वल 25 A 1-वे हैवी स्विच (इंडिकेटर)", category: "switch", finish: "White", modules: 1, packing: "10 N/60 N", listPrice: 153.00, mrp: 240.00, offerPrice: 119.00 },
-      { id: "marvel-8", series: "marvel", sku: "AHVSDIW201", name: "20 A DP Switch 2M with Ind Reo Marvel", nameHi: "रियो मार्वल 20 A DP स्विच (इंडिकेटर युक्त 2M)", category: "switch", finish: "White", modules: 2, packing: "10 N/60 N", listPrice: 196.00, mrp: 305.00, offerPrice: 152.00 },
-      { id: "marvel-9", series: "marvel", sku: "AHVSDIW321", name: "32 A DP Switch with Ind Reo Marvel", nameHi: "रियो मार्वल 32 A DP मेन स्विच (इंडिकेटर युक्त)", category: "switch", finish: "White", modules: 2, packing: "10 N/60 N", listPrice: 213.00, mrp: 330.00, offerPrice: 166.00 },
-      { id: "marvel-10", series: "marvel", sku: "AHVKSWW063", name: "6 A 3P with Shutter Socket Reo Marvel", nameHi: "रियो मार्वल 6 A 3-पिन शटर्ड सॉकेट", category: "socket", finish: "White", modules: 2, packing: "10 N/60 N", listPrice: 64.00, mrp: 100.00, offerPrice: 50.00 },
-      { id: "marvel-11", series: "marvel", sku: "AHVKCWW163", name: "6 A / 16 A 3-Pin Socket Reo Marvel", nameHi: "रियो मार्वल 6 A / 16 A कॉम्बो पावर सॉकेट", category: "socket", finish: "White", modules: 2, packing: "10 N/120 N", listPrice: 153.00, mrp: 240.00, offerPrice: 119.00 },
-      { id: "marvel-12", series: "marvel", sku: "AHVKCWW253", name: "16 A Heavy Duty Socket Reo Marvel", nameHi: "रियो मार्वल 16 A हैवी ड्यूटी शटर्ड सॉकेट", category: "socket", finish: "White", modules: 2, packing: "10 N/60 N", listPrice: 179.00, mrp: 280.00, offerPrice: 139.00 },
-      { id: "marvel-13", series: "marvel", sku: "AHVRFXW004", name: "1M Reg 4 Step Reo Marvel", nameHi: "रियो मार्वल 1M 4-स्टेप फैन रेगुलेटर", category: "regulator", finish: "White", modules: 1, packing: "10 N/120 N", listPrice: 303.00, mrp: 470.00, offerPrice: 236.00 },
-      { id: "marvel-14", series: "marvel", sku: "AHVRFXW005", name: "2M Reg 5 Step Reo Marvel", nameHi: "रियो मार्वल 2M 5-स्टेप 360° फैन रेगुलेटर", category: "regulator", finish: "White", modules: 2, packing: "10 N/60 N", listPrice: 370.00, mrp: 575.00, offerPrice: 288.00 },
-      { id: "marvel-15", series: "marvel", sku: "AHVKTOW001", name: "TV Socket Reo Marvel", nameHi: "रियो मार्वल TV समाक्षीय केबल सॉकेट", category: "hospitality", finish: "White", modules: 1, packing: "20 N/60 N", listPrice: 96.00, mrp: 150.00, offerPrice: 75.00 },
-      { id: "marvel-16", series: "marvel", sku: "AHVKRWW111", name: "RJ 11 Telephone Socket Reo Marvel", nameHi: "रियो मार्वल RJ-11 टेलीफोन सॉकेट", category: "hospitality", finish: "White", modules: 1, packing: "12 N/108 N", listPrice: 101.00, mrp: 160.00, offerPrice: 79.00 },
-      { id: "marvel-17", series: "marvel", sku: "AHVKRWW451", name: "RJ 45 Cat6 Data Outlet Reo Marvel", nameHi: "रियो मार्वल RJ-45 Cat6 लैन सॉकेट", category: "hospitality", finish: "White", modules: 1, packing: "20 N/240 N", listPrice: 549.00, mrp: 850.00, offerPrice: 428.00 },
-      { id: "marvel-18", series: "marvel", sku: "AHVGGXW001", name: "USB Charger Type-A 18W Reo Marvel", nameHi: "रियो मार्वल 18W USB टाइप-A फास्ट चार्जर", category: "hospitality", finish: "White", modules: 1, packing: "10 N/80 N", listPrice: 941.00, mrp: 1450.00, offerPrice: 734.00 },
-      { id: "marvel-19", series: "marvel", sku: "AHVKGXW001", name: "USB Charger Type-C 18W Reo Marvel", nameHi: "रियो मार्वल 18W USB टाइप-C फास्ट चार्जर", category: "hospitality", finish: "White", modules: 1, packing: "10 N/80 N", listPrice: 1098.00, mrp: 1690.00, offerPrice: 856.00 },
-      { id: "marvel-20", series: "marvel", sku: "AHVPLBWV01", name: "Blank Plate Reo Marvel (1M)", nameHi: "रियो मार्वल 1M डमी ब्लैंक प्लेट", category: "hospitality", finish: "White", modules: 1, packing: "20 N/60 N", listPrice: 24.00, mrp: 40.00, offerPrice: 19.00 },
-      { id: "marvel-21", series: "marvel", sku: "AHVILIW061", name: "Night Lamp Reo Marvel", nameHi: "रियो मार्वल नाइट लैंप इंडिकेटर", category: "hospitality", finish: "White", modules: 1, packing: "20 N/60 N", listPrice: 75.00, mrp: 120.00, offerPrice: 58.00 },
-      { id: "marvel-22", series: "marvel", sku: "AHVSMXW201", name: "20 A Motor Starter Reo Marvel", nameHi: "रियो मार्वल 20 A मोटर स्टार्टर स्विच", category: "hospitality", finish: "White", modules: 2, packing: "20 N/120 N", listPrice: 481.00, mrp: 745.00, offerPrice: 375.00 },
-      { id: "marvel-23", series: "marvel", sku: "AHVSMXW251", name: "25 A Motor Starter Reo Marvel", nameHi: "रियो मार्वल 25 A मोटर स्टार्टर स्विच", category: "hospitality", finish: "White", modules: 2, packing: "20 N/120 N", listPrice: 481.00, mrp: 745.00, offerPrice: 375.00 },
-      { id: "marvel-24", series: "marvel", sku: "AHVPFCWV02", name: "2M Foot Light Reo Marvel", nameHi: "रियो मार्वल 2M नाइट स्टेप फुटलाइट", category: "hospitality", finish: "White", modules: 2, packing: "20 N/120 N", listPrice: 515.00, mrp: 795.00, offerPrice: 401.00 },
-      { id: "marvel-25", series: "marvel", sku: "AHVPFCWV04", name: "4M Foot Light Color CCT Marvel", nameHi: "रियो मार्वल 4M CCT फुटलाइट", category: "hospitality", finish: "White", modules: 4, packing: "6 N/54 N", listPrice: 661.00, mrp: 1020.00, offerPrice: 515.00 },
-      { id: "marvel-26", series: "marvel", sku: "AHVSEIW321", name: "Key Card Electronic Type Reo Marvel", nameHi: "रियो मार्वल इलेक्ट्रॉनिक की-कार्ड स्विच", category: "hospitality", finish: "White", modules: 2, packing: "6 N/54 N", listPrice: 1782.00, mrp: 2750.00, offerPrice: 1390.00 },
-      { id: "marvel-27", series: "marvel", sku: "AHVBXXW000", name: "2M Buzzer Reo Marvel", nameHi: "रियो मार्वल 2M इलेक्ट्रॉनिक बजर", category: "hospitality", finish: "White", modules: 2, packing: "1 N/28 N", listPrice: 348.00, mrp: 540.00, offerPrice: 271.00 },
-      { id: "marvel-28", series: "marvel", sku: "AHVCEEW002", name: "2M Chimes (Electronic) Reo Marvel", nameHi: "रियो मार्वल 2M इलेक्ट्रॉनिक डोर चाइम", category: "hospitality", finish: "White", modules: 2, packing: "10 N/80 N", listPrice: 409.00, mrp: 630.00, offerPrice: 319.00 },
-      { id: "marvel-29", series: "marvel", sku: "AHVSPDW102", name: "DND Door Panel 2 Way Switch Reo Marvel", nameHi: "रियो मार्वल DND 2-वे डोर पैनल स्विच", category: "hospitality", finish: "White", modules: 1, packing: "10 N/80 N", listPrice: 258.00, mrp: 400.00, offerPrice: 201.00 },
-      { id: "marvel-30", series: "marvel", sku: "AHVSXCW061", name: "MMR 1 Way Switch (6 A) Reo Marvel", nameHi: "रियो मार्वल MMR 6 A 1-वे सर्विस स्विच", category: "hospitality", finish: "White", modules: 1, packing: "20 N/60 N", listPrice: 213.00, mrp: 330.00, offerPrice: 166.00 },
-      { id: "marvel-31", series: "marvel", sku: "AHVSIIW061", name: "DND and MMR Outdoor Panel Reo Marvel", nameHi: "रियो मार्वल DND / MMR आउटडोर इंडिकेटर पैनल", category: "hospitality", finish: "White", modules: 2, packing: "10 N/60 N", listPrice: 628.00, mrp: 970.00, offerPrice: 489.00 },
-
-      // =========================================================================
-      // CRABTREE ADIVA SERIES (53 SKUs)
-      // =========================================================================
-      { id: "adiva-1", series: "adiva", sku: "AHASXXW061", name: "Adiva 6 AX 1-Way Switch White", nameHi: "अदिवा 6 AX 1-वे स्विच (सफेद)", category: "switch", finish: "White", modules: 1, packing: "20 N/400 N", listPrice: 52.00, mrp: 60.00, offerPrice: 33.00 },
-      { id: "adiva-2", series: "adiva", sku: "AHASXXW062", name: "Adiva 6 AX 2-Way Switch White", nameHi: "अदिवा 6 AX 2-वे स्विच (सफेद)", category: "switch", finish: "White", modules: 1, packing: "20 N/120 N", listPrice: 120.00, mrp: 150.00, offerPrice: 85.00 },
-      { id: "adiva-3", series: "adiva", sku: "AHASBXW061", name: "Adiva 6 A Bell Push Switch White", nameHi: "अदिवा 6 A बेल पुश स्विच (सफेद)", category: "switch", finish: "White", modules: 1, packing: "20 N/120 N", listPrice: 130.00, mrp: 160.00, offerPrice: 89.00 },
-      { id: "adiva-4", series: "adiva", sku: "AHASXXW161", name: "Adiva 16 AX 1-Way Switch White", nameHi: "अदिवा 16 AX 1-वे पावर स्विच", category: "switch", finish: "White", modules: 1, packing: "20 N/60 N", listPrice: 155.00, mrp: 190.00, offerPrice: 106.00 },
-      { id: "adiva-5", series: "adiva", sku: "AHASXXW162", name: "Adiva 16 AX 2-Way Switch White", nameHi: "अदिवा 16 AX 2-वे पावर स्विच", category: "switch", finish: "White", modules: 1, packing: "20 N/60 N", listPrice: 190.00, mrp: 235.00, offerPrice: 130.00 },
-      { id: "adiva-6", series: "adiva", sku: "AHAMXXW062", name: "Adiva 6 AX 2-Way Mega Switch 2M White", nameHi: "अदिवा 6 AX 2-वे मेगा स्विच (2M सफेद)", category: "switch", finish: "White", modules: 2, packing: "10 N/60 N", listPrice: 160.00, mrp: 195.00, offerPrice: 110.00 },
-      { id: "adiva-7", series: "adiva", sku: "AHAMBIW061", name: "Adiva 6 A Mega Bell Push w/ Indicator 2M", nameHi: "अदिवा 6 A मेगा बेल पुश (इंडिकेटर युक्त 2M)", category: "switch", finish: "White", modules: 2, packing: "10 N/60 N", listPrice: 205.00, mrp: 250.00, offerPrice: 140.00 },
-      { id: "adiva-8", series: "adiva", sku: "AHASPXW061", name: "Adiva 6 AX 1-Way Flat Switch White", nameHi: "अदिवा 6 AX 1-वे फ्लैट स्विच (सफेद)", category: "switch", finish: "White", modules: 1, packing: "20 N/400 N", listPrice: 55.00, mrp: 65.00, offerPrice: 36.00 },
-      { id: "adiva-9", series: "adiva", sku: "AHASPXW062", name: "Adiva 6 AX 2-Way Flat Switch White", nameHi: "अदिवा 6 AX 2-वे फ्लैट स्विच (सफेद)", category: "switch", finish: "White", modules: 1, packing: "20 N/120 N", listPrice: 125.00, mrp: 155.00, offerPrice: 88.00 },
-      { id: "adiva-10", series: "adiva", sku: "AHASPKW061", name: "Adiva 6 A Bell Push Flat Switch White", nameHi: "अदिवा 6 A बेल पुश फ्लैट स्विच", category: "switch", finish: "White", modules: 1, packing: "20 N/120 N", listPrice: 135.00, mrp: 165.00, offerPrice: 92.00 },
-      { id: "adiva-11", series: "adiva", sku: "AHASPXW161", name: "Adiva 16 AX 1-Way Flat Switch White", nameHi: "अदिवा 16 AX 1-वे फ्लैट स्विच (सफेद)", category: "switch", finish: "White", modules: 1, packing: "20 N/60 N", listPrice: 160.00, mrp: 195.00, offerPrice: 110.00 },
-      { id: "adiva-12", series: "adiva", sku: "AHAKPXW063", name: "Adiva 6 A 3-Pin Shuttered Socket White", nameHi: "अदिवा 6 A 3-पिन शटर्ड सॉकेट (सफेद)", category: "socket", finish: "White", modules: 2, packing: "10 N/60 N", listPrice: 180.00, mrp: 220.00, offerPrice: 122.00 },
-      { id: "adiva-13", series: "adiva", sku: "AHAKCXW163", name: "Adiva 6 A / 16 A Shuttered Combo Socket", nameHi: "अदिवा 6 A / 16 A शटर्ड कॉम्बो सॉकेट", category: "socket", finish: "White", modules: 2, packing: "10 N/120 N", listPrice: 295.00, mrp: 355.00, offerPrice: 199.00 },
-      { id: "adiva-14", series: "adiva", sku: "AHAKCXW253", name: "Adiva 25 A Heavy Duty Shuttered Socket", nameHi: "अदिवा 25 A हैवी ड्यूटी शटर्ड सॉकेट", category: "socket", finish: "White", modules: 2, packing: "10 N/60 N", listPrice: 340.00, mrp: 410.00, offerPrice: 230.00 },
-      { id: "adiva-15", series: "adiva", sku: "AHARFXW004", name: "Adiva 1 M Step Fan Regulator White", nameHi: "अदिवा 1M 4-स्टेप फैन रेगुलेटर", category: "regulator", finish: "White", modules: 1, packing: "10 N/120 N", listPrice: 395.00, mrp: 463.00, offerPrice: 299.00 },
-      { id: "adiva-16", series: "adiva", sku: "AHARFHW005", name: "Adiva 2 M 360 Degree Fan Regulator", nameHi: "अदिवा 2M 360° रोटरी स्टेप रेगुलेटर", category: "regulator", finish: "White", modules: 2, packing: "10 N/60 N", listPrice: 470.00, mrp: 550.00, offerPrice: 345.00 },
-      { id: "adiva-17", series: "adiva", sku: "AHAIIIW060", name: "Adiva 1 M Indicator Lamp White", nameHi: "अदिवा 1M इंडिकेटर लैंप", category: "hospitality", finish: "White", modules: 1, packing: "20 N/120 N", listPrice: 110.00, mrp: 135.00, offerPrice: 78.00 },
-      { id: "adiva-18", series: "adiva", sku: "AHAPFBWV01", name: "Adiva 1 M Blanking Dummy Plate White", nameHi: "अदिवा 1M डमी ब्लैंक मॉड्यूल", category: "hospitality", finish: "White", modules: 1, packing: "20 N/60 N", listPrice: 35.00, mrp: 48.00, offerPrice: 28.00 },
-      { id: "adiva-19", series: "adiva", sku: "AHAPFCWV04", name: "Adiva 4 M Step LED Footlamp White", nameHi: "अदिवा 4M स्टेप LED फुटलैंप", category: "hospitality", finish: "White", modules: 4, packing: "6 N/54 N", listPrice: 650.00, mrp: 780.00, offerPrice: 485.00 },
-      { id: "adiva-20", series: "adiva", sku: "AHAPFCWV02", name: "Adiva 2 M Step LED Footlamp White", nameHi: "अदिवा 2M स्टेप LED फुटलैंप", category: "hospitality", finish: "White", modules: 2, packing: "20 N/120 N", listPrice: 490.00, mrp: 590.00, offerPrice: 370.00 },
-      { id: "adiva-21", series: "adiva", sku: "DHANCSPA010", name: "Adiva 10 A SP C-Curve Mini MCB White", nameHi: "अदिवा 10 A SP मिनी MCB (सफेद)", category: "mcb", finish: "White", modules: 1, packing: "12 N/120 N", listPrice: 280.00, mrp: 330.00, offerPrice: 195.00 },
-      { id: "adiva-22", series: "adiva", sku: "DHANCSPA016", name: "Adiva 16 A SP C-Curve Mini MCB White", nameHi: "अदिवा 16 A SP मिनी MCB (सफेद)", category: "mcb", finish: "White", modules: 1, packing: "12 N/120 N", listPrice: 280.00, mrp: 330.00, offerPrice: 195.00 },
-      { id: "adiva-23", series: "adiva", sku: "DHANCSPA020", name: "Adiva 20 A SP C-Curve Mini MCB White", nameHi: "अदिवा 20 A SP मिनी MCB (सफेद)", category: "mcb", finish: "White", modules: 1, packing: "12 N/120 N", listPrice: 280.00, mrp: 330.00, offerPrice: 195.00 },
-      { id: "adiva-24", series: "adiva", sku: "DHANCSPA025", name: "Adiva 25 A SP C-Curve Mini MCB White", nameHi: "अदिवा 25 A SP मिनी MCB (सफेद)", category: "mcb", finish: "White", modules: 1, packing: "12 N/120 N", listPrice: 295.00, mrp: 350.00, offerPrice: 205.00 },
-      { id: "adiva-25", series: "adiva", sku: "DHANCSPA032", name: "Adiva 32 A SP C-Curve Mini MCB White", nameHi: "अदिवा 32 A SP मिनी MCB (सफेद)", category: "mcb", finish: "White", modules: 1, packing: "12 N/120 N", listPrice: 295.00, mrp: 350.00, offerPrice: 205.00 },
-      { id: "adiva-26", series: "adiva", sku: "DHANCSPA100MR", name: "Adiva 10 A SP C-Curve Mini MCB Grey", nameHi: "अदिवा 10 A SP मिनी MCB (ग्रे)", category: "mcb", finish: "Grey", modules: 1, packing: "12 N/120 N", listPrice: 310.00, mrp: 370.00, offerPrice: 218.00 },
-      { id: "adiva-27", series: "adiva", sku: "DHANCSPA160MR", name: "Adiva 16 A SP C-Curve Mini MCB Grey", nameHi: "अदिवा 16 A SP मिनी MCB (ग्रे)", category: "mcb", finish: "Grey", modules: 1, packing: "12 N/120 N", listPrice: 310.00, mrp: 370.00, offerPrice: 218.00 },
-      { id: "adiva-28", series: "adiva", sku: "DHANCSPA200MR", name: "Adiva 20 A SP C-Curve Mini MCB Grey", nameHi: "अदिवा 20 A SP मिनी MCB (ग्रे)", category: "mcb", finish: "Grey", modules: 1, packing: "12 N/120 N", listPrice: 310.00, mrp: 370.00, offerPrice: 218.00 },
-      { id: "adiva-29", series: "adiva", sku: "DHANCSPA250MR", name: "Adiva 25 A SP C-Curve Mini MCB Grey", nameHi: "अदिवा 25 A SP मिनी MCB (ग्रे)", category: "mcb", finish: "Grey", modules: 1, packing: "12 N/120 N", listPrice: 325.00, mrp: 390.00, offerPrice: 228.00 },
-      { id: "adiva-30", series: "adiva", sku: "DHANCSPA320MR", name: "Adiva 32 A SP C-Curve Mini MCB Grey", nameHi: "अदिवा 32 A SP मिनी MCB (ग्रे)", category: "mcb", finish: "Grey", modules: 1, packing: "12 N/120 N", listPrice: 325.00, mrp: 390.00, offerPrice: 228.00 },
-      { id: "adiva-31", series: "adiva", sku: "AHAPLCWV01", name: "Adiva 1 Module Cover Plate White", nameHi: "अदिवा 1M कवर प्लेट (सफेद)", category: "plate", finish: "White", modules: 1, packing: "5 N/80 N", listPrice: 110.00, mrp: 130.00, offerPrice: 74.00 },
-      { id: "adiva-32", series: "adiva", sku: "AHAPLCWV02", name: "Adiva 2 Module Cover Plate White", nameHi: "अदिवा 2M कवर प्लेट (सफेद)", category: "plate", finish: "White", modules: 2, packing: "5 N/80 N", listPrice: 110.00, mrp: 130.00, offerPrice: 74.00 },
-      { id: "adiva-33", series: "adiva", sku: "AHAPLCWV03", name: "Adiva 3 Module Cover Plate White", nameHi: "अदिवा 3M कवर प्लेट (सफेद)", category: "plate", finish: "White", modules: 3, packing: "5 N/80 N", listPrice: 135.00, mrp: 160.00, offerPrice: 92.00 },
-      { id: "adiva-34", series: "adiva", sku: "AHAPLCWV04", name: "Adiva 4 Module Cover Plate White", nameHi: "अदिवा 4M कवर प्लेट (सफेद)", category: "plate", finish: "White", modules: 4, packing: "5 N/80 N", listPrice: 155.00, mrp: 185.00, offerPrice: 105.00 },
-      { id: "adiva-35", series: "adiva", sku: "AHAPLCWV06", name: "Adiva 6 Module Cover Plate White", nameHi: "अदिवा 6M कवर प्लेट (सफेद)", category: "plate", finish: "White", modules: 6, packing: "5 N/60 N", listPrice: 215.00, mrp: 260.00, offerPrice: 148.00 },
-      { id: "adiva-36", series: "adiva", sku: "AHAPLCWV08", name: "Adiva 8 Module Square Plate White", nameHi: "अदिवा 8M स्क्वायर प्लेट (सफेद)", category: "plate", finish: "White", modules: 8, packing: "5 N/60 N", listPrice: 275.00, mrp: 330.00, offerPrice: 188.00 },
-      { id: "adiva-37", series: "adiva", sku: "AHAPLCWH08", name: "Adiva 8 Module Horizontal Plate White", nameHi: "अदिवा 8M हॉरिजॉन्टल प्लेट (सफेद)", category: "plate", finish: "White", modules: 8, packing: "5 N/60 N", listPrice: 275.00, mrp: 330.00, offerPrice: 188.00 },
-      { id: "adiva-38", series: "adiva", sku: "AHAPLCWV09", name: "Adiva 9 Module Cover Plate White", nameHi: "अदिवा 9M कवर प्लेट (सफेद)", category: "plate", finish: "White", modules: 9, packing: "5 N/60 N", listPrice: 295.00, mrp: 355.00, offerPrice: 202.00 },
-      { id: "adiva-39", series: "adiva", sku: "AHAPLCWV12", name: "Adiva 12 Module Cover Plate White", nameHi: "अदिवा 12M कवर प्लेट (सफेद)", category: "plate", finish: "White", modules: 12, packing: "5 N/40 N", listPrice: 345.00, mrp: 415.00, offerPrice: 236.00 },
-      { id: "adiva-40", series: "adiva", sku: "AHAPLCWV16", name: "Adiva 16 Module Cover Plate White", nameHi: "अदिवा 16M कवर प्लेट (सफेद)", category: "plate", finish: "White", modules: 16, packing: "5 N/40 N", listPrice: 385.00, mrp: 460.00, offerPrice: 262.00 },
-      { id: "adiva-41", series: "adiva", sku: "AHAPLCWV18", name: "Adiva 18 Module Cover Plate White", nameHi: "अदिवा 18M कवर प्लेट (सफेद)", category: "plate", finish: "White", modules: 18, packing: "5 N/30 N", listPrice: 420.00, mrp: 505.00, offerPrice: 288.00 },
-      { id: "adiva-42", series: "adiva", sku: "AHAPLCGV01", name: "Adiva 1 Module Cover Plate Grey", nameHi: "अदिवा 1M कवर प्लेट (ग्रे)", category: "plate", finish: "Grey", modules: 1, packing: "5 N/80 N", listPrice: 130.00, mrp: 155.00, offerPrice: 88.00 },
-      { id: "adiva-43", series: "adiva", sku: "AHAPLCGV02", name: "Adiva 2 Module Cover Plate Grey", nameHi: "अदिवा 2M कवर प्लेट (ग्रे)", category: "plate", finish: "Grey", modules: 2, packing: "5 N/80 N", listPrice: 130.00, mrp: 155.00, offerPrice: 88.00 },
-      { id: "adiva-44", series: "adiva", sku: "AHAPLCGV03", name: "Adiva 3 Module Cover Plate Grey", nameHi: "अदिवा 3M कवर प्लेट (ग्रे)", category: "plate", finish: "Grey", modules: 3, packing: "5 N/80 N", listPrice: 160.00, mrp: 190.00, offerPrice: 110.00 },
-      { id: "adiva-45", series: "adiva", sku: "AHAPLCGV04", name: "Adiva 4 Module Cover Plate Grey", nameHi: "अदिवा 4M कवर प्लेट (ग्रे)", category: "plate", finish: "Grey", modules: 4, packing: "5 N/80 N", listPrice: 185.00, mrp: 220.00, offerPrice: 125.00 },
-      { id: "adiva-46", series: "adiva", sku: "AHAPLCGV06", name: "Adiva 6 Module Cover Plate Grey", nameHi: "अदिवा 6M कवर प्लेट (ग्रे)", category: "plate", finish: "Grey", modules: 6, packing: "5 N/60 N", listPrice: 255.00, mrp: 305.00, offerPrice: 175.00 },
-      { id: "adiva-47", series: "adiva", sku: "AHAPLCGV08", name: "Adiva 8 Module Square Plate Grey", nameHi: "अदिवा 8M स्क्वायर प्लेट (ग्रे)", category: "plate", finish: "Grey", modules: 8, packing: "5 N/60 N", listPrice: 325.00, mrp: 390.00, offerPrice: 222.00 },
-      { id: "adiva-48", series: "adiva", sku: "AHAPLCGH08", name: "Adiva 8 Module Horizontal Plate Grey", nameHi: "अदिवा 8M हॉरिजॉन्टल प्लेट (ग्रे)", category: "plate", finish: "Grey", modules: 8, packing: "5 N/60 N", listPrice: 325.00, mrp: 390.00, offerPrice: 222.00 },
-      { id: "adiva-49", series: "adiva", sku: "AHAPLCGV09", name: "Adiva 9 Module Cover Plate Grey", nameHi: "अदिवा 9M कवर प्लेट (ग्रे)", category: "plate", finish: "Grey", modules: 9, packing: "5 N/60 N", listPrice: 350.00, mrp: 420.00, offerPrice: 238.00 },
-      { id: "adiva-50", series: "adiva", sku: "AHAPLCGV12", name: "Adiva 12 Module Cover Plate Grey", nameHi: "अदिवा 12M कवर प्लेट (ग्रे)", category: "plate", finish: "Grey", modules: 12, packing: "5 N/40 N", listPrice: 410.00, mrp: 490.00, offerPrice: 279.00 },
-      { id: "adiva-51", series: "adiva", sku: "AHAPLCGV16", name: "Adiva 16 Module Cover Plate Grey", nameHi: "अदिवा 16M कवर प्लेट (ग्रे)", category: "plate", finish: "Grey", modules: 16, packing: "5 N/40 N", listPrice: 455.00, mrp: 545.00, offerPrice: 310.00 },
-      { id: "adiva-52", series: "adiva", sku: "AHAPLCGV18", name: "Adiva 18 Module Cover Plate Grey", nameHi: "अदिवा 18M कवर प्लेट (ग्रे)", category: "plate", finish: "Grey", modules: 18, packing: "5 N/30 N", listPrice: 495.00, mrp: 595.00, offerPrice: 340.00 },
-      { id: "adiva-53", series: "adiva", sku: "AHASXIW161", name: "Adiva 16 AX 1-Way Switch with Indicator White", nameHi: "अदिवा 16 AX 1-वे स्विच (इंडिकेटर युक्त सफेद)", category: "switch", finish: "White", modules: 1, packing: "20 N/60 N", listPrice: 195.00, mrp: 230.00, offerPrice: 128.00 }
-    ];
-
-    // Local Storage state management keys
-    const STORAGE_KEY = 'LUCKY_ELECTRICAL_CATALOG_MASTER_V5';
-    const BASELINE_KEY = 'lc_electric_custom_baseline_v2';
-    
-    let catalog = [];
-    let lastDeleted = null;
-    let toastTimeout = null;
-    let activeModalItem = null;
-
-    // Filter states
-    let activeSeries = 'all';
-    let activeCategory = 'all';
-    let searchQuery = '';
-    let activeSort = 'default';
-    let viewMode = 'grid';
-
-    // In-Drawer Filter States
-    let drawerSeries = 'all';
-    let drawerSearchQuery = '';
-
-    function loadCatalog() {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        try {
-          catalog = JSON.parse(saved);
-        } catch (e) {
-          catalog = getEffectiveBaseline();
-        }
-      } else {
-        catalog = getEffectiveBaseline();
-        saveCatalog();
-      }
-      updateBaselineStatusDisplay();
-    }
-
-    function getEffectiveBaseline() {
-      const customBase = localStorage.getItem(BASELINE_KEY);
-      if (customBase) {
-        try {
-          return JSON.parse(customBase);
-        } catch (e) {
-          return JSON.parse(JSON.stringify(INITIAL_CATALOG));
-        }
-      }
-      return JSON.parse(JSON.stringify(INITIAL_CATALOG));
-    }
-
-    function saveCatalog() {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(catalog));
-      updateCounters();
-    }
-
-    function updateBaselineStatusDisplay() {
-      const badge = document.getElementById("baselineStatusBadge");
-      const hasCustom = !!localStorage.getItem(BASELINE_KEY);
-      if (badge) {
-        if (hasCustom) {
-          badge.innerText = "Custom Baseline Active";
-          badge.className = "text-emerald-300 bg-emerald-950/80 px-2 py-0.5 rounded text-[10px] font-mono border border-emerald-700/50";
-        } else {
-          badge.innerText = "Factory Baseline (129)";
-          badge.className = "text-indigo-300 bg-indigo-950/80 px-2 py-0.5 rounded text-[10px] font-mono border border-indigo-700/50";
-        }
-      }
-    }
-
-    // =========================================================================
-    // BASELINE SETTING ENGINE (PASSWORD: 952593)
-    // =========================================================================
-    function promptSetBaseline() {
-      const modal = document.getElementById("setBaselineModal");
-      const input = document.getElementById("baselinePasswordInput");
-      input.value = "";
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-      input.focus();
-    }
-
-    function closeSetBaselineModal() {
-      const modal = document.getElementById("setBaselineModal");
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-    }
-
-    function verifyAndSaveBaseline() {
-      const pass = document.getElementById("baselinePasswordInput").value;
-      if (pass === "952593") {
-        closeSetBaselineModal();
-        localStorage.setItem(BASELINE_KEY, JSON.stringify(catalog));
-        updateBaselineStatusDisplay();
-        
-        // Show success modal
-        showMessageBox(
-          "Baseline Successfully Saved", 
-          `All ${catalog.length} current products and prices have been permanently saved as your new baseline! Any future Reset will restore these figures.`, 
-          true
-        );
-        showToast("New Baseline Set Successfully (Password Verified)");
-      } else {
-        closeSetBaselineModal();
-        showMessageBox("Access Denied", "Incorrect baseline password. Baseline was not updated.", false);
-      }
-    }
-
-    // =========================================================================
-    // CATALOG RESET ENGINE (PASSWORD: lucky123)
-    // =========================================================================
-    function promptResetCatalog() {
-      document.getElementById("resetPasswordInput").value = "";
-      document.getElementById("passwordModal").classList.remove("hidden");
-      document.getElementById("passwordModal").classList.add("flex");
-      document.getElementById("resetPasswordInput").focus();
-    }
-
-    function closePasswordModal() {
-      document.getElementById("passwordModal").classList.add("hidden");
-      document.getElementById("passwordModal").classList.remove("flex");
-    }
-
-    function verifyPasswordForReset() {
-      const pass = document.getElementById("resetPasswordInput").value;
-      if (pass === "lucky123") {
-        closePasswordModal();
-        const hasCustom = !!localStorage.getItem(BASELINE_KEY);
-        const warning = document.getElementById("resetWarningText");
-        if (warning) {
-          warning.innerText = hasCustom 
-            ? "Reset all catalog products and prices back to your Custom Baseline? Uncommitted modifications will be discarded."
-            : "Reset all catalog products and prices back to the standard Factory 129 SKUs?";
-        }
-        document.getElementById("confirmResetModal").classList.remove("hidden");
-        document.getElementById("confirmResetModal").classList.add("flex");
-      } else {
-        closePasswordModal();
-        showMessageBox("Access Denied", "Incorrect administrative password. Reset operation canceled.", false);
-      }
-    }
-
-    function closeConfirmModal() {
-      document.getElementById("confirmResetModal").classList.add("hidden");
-      document.getElementById("confirmResetModal").classList.remove("flex");
-    }
-
-    function executeCatalogReset() {
-      catalog = getEffectiveBaseline();
-      saveCatalog();
-      renderAll();
-      renderDrawer();
-      closeConfirmModal();
-      showToast("Catalog restored to baseline");
-    }
-
-    function showMessageBox(title, message, isSuccess = true) {
-      document.getElementById("messageBoxTitle").innerText = title;
-      document.getElementById("messageBoxText").innerText = message;
-      const iconBox = document.getElementById("msgIconBox");
-      if (isSuccess) {
-        iconBox.className = "w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3";
-        iconBox.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>`;
-      } else {
-        iconBox.className = "w-12 h-12 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center mx-auto mb-3";
-        iconBox.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>`;
-      }
-      document.getElementById("messageBoxModal").classList.remove("hidden");
-      document.getElementById("messageBoxModal").classList.add("flex");
-    }
-
-    function closeMessageBox() {
-      document.getElementById("messageBoxModal").classList.add("hidden");
-      document.getElementById("messageBoxModal").classList.remove("flex");
-    }
-
-    function formatCurrency(val) {
-      return '₹ ' + Number(val).toFixed(2);
-    }
-
-    function calculateDiscount(mrp, offerPrice) {
-      if (!mrp || mrp <= 0) return 0;
-      return Math.round(((mrp - offerPrice) / mrp) * 100);
-    }
-
-    function showToast(msg, allowUndo = false) {
-      const toast = document.getElementById("undoToast");
-      const msgEl = document.getElementById("toastMessage");
-      const undoBtn = document.getElementById("toastUndoBtn");
-      msgEl.innerText = msg;
-      if (allowUndo) {
-        undoBtn.classList.remove("hidden");
-      } else {
-        undoBtn.classList.add("hidden");
-      }
-      toast.classList.remove("hidden");
-      clearTimeout(toastTimeout);
-      toastTimeout = setTimeout(() => toast.classList.add("hidden"), 4500);
-    }
-
-    function generateVectorVisual(item) {
-      const isGrey = (item.finish || '').toLowerCase().includes('grey');
-      const isBliss = item.series === 'bliss';
-      const plateBg = isGrey ? '#475569' : '#f8fafc';
-      const borderCol = isGrey ? '#334155' : (isBliss ? '#cbd5e1' : '#e2e8f0');
-      const rockerBg = isGrey ? '#334155' : '#ffffff';
-      const strokeLine = isGrey ? '#64748b' : '#cbd5e1';
-
-      if (item.category === 'surfacebox') {
-        return `
-          <svg viewBox="0 0 160 120" class="w-full h-full object-contain">
-            <rect x="25" y="15" width="110" height="90" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2.5" />
-            <rect x="33" y="23" width="94" height="74" rx="4" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="3 3"/>
-            <circle cx="40" cy="30" r="3.5" fill="#64748b"/>
-            <circle cx="120" cy="30" r="3.5" fill="#64748b"/>
-            <circle cx="40" cy="90" r="3.5" fill="#64748b"/>
-            <circle cx="120" cy="90" r="3.5" fill="#64748b"/>
-            <text x="80" y="65" font-size="10" font-family="monospace" font-weight="bold" fill="#475569" text-anchor="middle">${item.modules}M BOX</text>
-          </svg>`;
-      }
-
-      if (item.category === 'plate') {
-        return `
-          <svg viewBox="0 0 160 120" class="w-full h-full object-contain">
-            <rect x="20" y="20" width="120" height="80" rx="${isBliss ? '12' : '6'}" fill="${plateBg}" stroke="${borderCol}" stroke-width="2.5" />
-            <rect x="32" y="32" width="96" height="56" rx="4" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1" />
-            <text x="80" y="64" font-size="11" font-weight="bold" fill="#64748b" text-anchor="middle" font-family="sans-serif">${item.modules} MODULE</text>
-          </svg>`;
-      }
-
-      if (item.category === 'mcb') {
-        const toggleCol = isGrey ? '#1e293b' : '#dc2626';
-        return `
-          <svg viewBox="0 0 160 120" class="w-full h-full object-contain">
-            <rect x="52" y="15" width="56" height="90" rx="5" fill="${plateBg}" stroke="${borderCol}" stroke-width="2" />
-            <rect x="62" y="32" width="36" height="30" rx="3" fill="#0f172a" />
-            <rect x="70" y="38" width="20" height="18" rx="2" fill="${toggleCol}" />
-            <circle cx="80" cy="80" r="4" fill="#10b981" />
-            <text x="80" y="100" font-size="8" font-family="monospace" font-weight="bold" fill="#64748b" text-anchor="middle">MCB SP</text>
-          </svg>`;
-      }
-
-      if (item.category === 'regulator') {
-        return `
-          <svg viewBox="0 0 160 120" class="w-full h-full object-contain">
-            <rect x="35" y="15" width="90" height="90" rx="8" fill="${plateBg}" stroke="${borderCol}" stroke-width="2" />
-            <circle cx="80" cy="60" r="28" fill="#e2e8f0" stroke="${strokeLine}" stroke-width="2" />
-            <circle cx="80" cy="60" r="18" fill="${rockerBg}" stroke="${strokeLine}" stroke-width="1.5" />
-            <line x1="80" y1="44" x2="80" y2="56" stroke="#ea580c" stroke-width="3" stroke-linecap="round" />
-            <circle cx="60" cy="40" r="1.5" fill="#94a3b8" />
-            <circle cx="100" cy="40" r="1.5" fill="#94a3b8" />
-            <circle cx="60" cy="80" r="1.5" fill="#94a3b8" />
-            <circle cx="100" cy="80" r="1.5" fill="#94a3b8" />
-          </svg>`;
-      }
-
-      if (item.category === 'socket') {
-        return `
-          <svg viewBox="0 0 160 120" class="w-full h-full object-contain">
-            <rect x="30" y="15" width="100" height="90" rx="8" fill="${plateBg}" stroke="${borderCol}" stroke-width="2" />
-            <rect x="42" y="26" width="76" height="68" rx="6" fill="#e2e8f0" stroke="${strokeLine}" stroke-width="1" />
-            <circle cx="80" cy="45" r="5" fill="#0f172a" />
-            <circle cx="65" cy="68" r="4.5" fill="#0f172a" />
-            <circle cx="95" cy="68" r="4.5" fill="#0f172a" />
-            <rect x="75" y="78" width="10" height="3" fill="#cbd5e1" rx="1"/>
-          </svg>`;
-      }
-
-      // Default Switch & Bell Push
-      const hasInd = item.name.toLowerCase().includes('ind') || item.sku.includes('BIW') || item.sku.includes('XIW');
-      return `
-        <svg viewBox="0 0 160 120" class="w-full h-full object-contain">
-          <rect x="35" y="15" width="90" height="90" rx="${isBliss ? '12' : '6'}" fill="${plateBg}" stroke="${borderCol}" stroke-width="2" />
-          <rect x="48" y="25" width="64" height="70" rx="${isBliss ? '6' : '3'}" fill="${rockerBg}" stroke="${strokeLine}" stroke-width="1.5" />
-          <line x1="48" y1="60" x2="112" y2="60" stroke="${strokeLine}" stroke-width="1" />
-          ${hasInd ? '<circle cx="80" cy="40" r="3" fill="#f97316" stroke="#c2410c" stroke-width="0.5"/>' : ''}
-          <text x="80" y="85" font-size="7" font-family="sans-serif" font-weight="bold" fill="#94a3b8" text-anchor="middle">${item.series.toUpperCase()}</text>
-        </svg>`;
-    }
-
-    function getFilteredList() {
-      return catalog.filter(item => {
-        const matchesSeries = activeSeries === 'all' || item.series === activeSeries;
-        const matchesCat = activeCategory === 'all' || item.category === activeCategory;
-        const q = searchQuery.toLowerCase().trim();
-        const matchesSearch = !q ||
-          item.sku.toLowerCase().includes(q) ||
-          item.name.toLowerCase().includes(q) ||
-          (item.nameHi && item.nameHi.toLowerCase().includes(q)) ||
-          (item.finish && item.finish.toLowerCase().includes(q)) ||
-          (item.packing && item.packing.toLowerCase().includes(q));
-
-        return matchesSeries && matchesCat && matchesSearch;
-      }).sort((a, b) => {
-        if (activeSort === "price-asc") return a.offerPrice - b.offerPrice;
-        if (activeSort === "price-desc") return b.offerPrice - a.offerPrice;
-        if (activeSort === "discount-desc") {
-          const discA = ((a.mrp - a.offerPrice) / a.mrp);
-          const discB = ((b.mrp - b.offerPrice) / b.mrp);
-          return discB - discA;
-        }
-        if (activeSort === "sku-asc") return a.sku.localeCompare(b.sku);
-        return 0;
-      });
-    }
-
-    function getDrawerFilteredList() {
-      return catalog.filter(item => {
-        const matchesSeries = drawerSeries === 'all' || item.series === drawerSeries;
-        const q = drawerSearchQuery.toLowerCase().trim();
-        const matchesSearch = !q ||
-          item.sku.toLowerCase().includes(q) ||
-          item.name.toLowerCase().includes(q) ||
-          (item.nameHi && item.nameHi.toLowerCase().includes(q));
-
-        return matchesSeries && matchesSearch;
-      });
-    }
-
-    function renderGrid(items) {
-      const container = document.getElementById("gridContainer");
-      container.innerHTML = items.map(item => {
-        const discountPct = calculateDiscount(item.mrp, item.offerPrice);
-        const seriesBadge = item.series === 'bliss' 
-          ? '<span class="bg-amber-100 text-amber-800 border border-amber-200 text-[10px] font-bold px-2 py-0.5 rounded-md">Reo Bliss</span>'
-          : (item.series === 'marvel' 
-              ? '<span class="bg-sky-100 text-sky-800 border border-sky-200 text-[10px] font-bold px-2 py-0.5 rounded-md">Reo Marvel</span>'
-              : '<span class="bg-rose-100 text-rose-800 border border-rose-200 text-[10px] font-bold px-2 py-0.5 rounded-md">Crabtree Adiva</span>');
-
-        return `
-          <div onclick="openProductModal('${item.id}')" class="bg-white rounded-2xl border border-slate-200 p-4 card-hover flex flex-col justify-between group relative shadow-xs cursor-pointer">
-            <button onclick="handleDeleteProduct('${item.id}', event)" title="Remove item" class="absolute top-2.5 right-2.5 text-slate-300 hover:text-rose-600 opacity-0 group-hover:opacity-100 transition p-1 rounded-md hover:bg-rose-50 no-print z-10">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-            </button>
-
-            <div>
-              <div class="flex items-center justify-between gap-1 mb-2">
-                ${seriesBadge}
-                <span class="font-mono text-[11px] font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">${item.sku}</span>
-              </div>
-
-              <div class="bg-slate-50 rounded-xl p-2 mb-3 border border-slate-100 flex items-center justify-center h-28">
-                ${generateVectorVisual(item)}
-              </div>
-
-              <h4 class="font-bold text-xs text-slate-900 leading-snug line-clamp-2">${item.name}</h4>
-              <p class="text-xs font-hindi text-brand-700 mt-0.5 font-bold leading-tight line-clamp-1">${item.nameHi || ''}</p>
-              
-              ${item.packing ? `
-                <div class="mt-2 text-[10px] font-medium text-slate-600 flex items-center gap-1">
-                  <span class="text-slate-400">Pack:</span> <span class="bg-slate-100 px-1.5 py-0.5 rounded font-mono font-semibold">${item.packing}</span>
-                </div>` : ''}
-            </div>
-
-            <div class="mt-4 pt-3 border-t border-slate-100">
-              <div class="flex items-baseline justify-between">
-                <div>
-                  <span class="text-[9px] text-slate-400 block uppercase font-bold">Striked List</span>
-                  <span class="text-xs font-bold text-rose-500 line-through">${formatCurrency(item.listPrice)}</span>
-                </div>
-                <div class="text-right">
-                  <span class="text-[9px] text-slate-400 block uppercase font-bold">Havells MRP</span>
-                  <span class="text-xs font-bold text-slate-700 font-mono">${formatCurrency(item.mrp)}</span>
-                </div>
-              </div>
-
-              <div class="flex items-center justify-between mt-2 pt-2 border-t border-dashed border-slate-200">
-                <div>
-                  <span class="text-[9px] uppercase font-extrabold text-brand-600 tracking-wider block">Special Offer</span>
-                  <span class="text-base font-black text-brand-600 tracking-tight font-mono">${formatCurrency(item.offerPrice)}</span>
-                </div>
-                <span class="bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-black px-2 py-0.5 rounded-full">
-                  ${discountPct}% OFF
-                </span>
-              </div>
-            </div>
-          </div>`;
-      }).join('');
-    }
-
-    function renderTable(items) {
-      const tbody = document.getElementById("tableBody");
-      tbody.innerHTML = items.map((item, idx) => {
-        const discountPct = calculateDiscount(item.mrp, item.offerPrice);
-        return `
-          <tr onclick="openProductModal('${item.id}')" class="hover:bg-amber-50/50 transition border-b border-slate-100 cursor-pointer">
-            <td class="p-2.5 text-center text-slate-400 text-[11px] font-mono">${idx + 1}</td>
-            <td class="p-1.5 text-center w-16">
-              <div class="w-12 h-10 bg-slate-50 rounded border border-slate-200 p-0.5 mx-auto flex items-center justify-center">
-                ${generateVectorVisual(item)}
-              </div>
-            </td>
-            <td class="p-2.5">
-              <div class="font-bold text-slate-900 text-xs">${item.name}</div>
-              <div class="font-hindi text-brand-700 text-[11px] font-bold">${item.nameHi || ''}</div>
-              <span class="font-mono text-[10px] text-slate-600 font-bold bg-slate-100 px-1.5 py-0.2 rounded border border-slate-200">${item.sku}</span>
-            </td>
-            <td class="p-2.5">
-              <span class="capitalize text-slate-800 text-xs font-bold">${item.series}</span>
-              <div class="text-[10px] text-slate-400">${item.finish || 'Standard'} • ${item.modules}M</div>
-            </td>
-            <td class="p-2.5 text-slate-600 font-medium text-[11px] font-mono">${item.packing || '—'}</td>
-            <td class="p-2.5 text-right text-rose-500 font-bold line-through font-mono">${formatCurrency(item.listPrice)}</td>
-            <td class="p-2.5 text-right text-slate-700 font-bold font-mono">${formatCurrency(item.mrp)}</td>
-            <td class="p-2.5 text-right font-black text-brand-600 text-sm font-mono">${formatCurrency(item.offerPrice)}</td>
-            <td class="p-2.5 text-center">
-              <span class="bg-emerald-50 text-emerald-700 font-black px-2 py-0.5 rounded-full text-[10px] border border-emerald-200">
-                ${discountPct}%
-              </span>
-            </td>
-            <td class="p-2.5 text-center no-print" onclick="event.stopPropagation()">
-              <button onclick="handleDeleteProduct('${item.id}', event)" title="Delete SKU" class="text-slate-300 hover:text-rose-600 p-1">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-              </button>
-            </td>
-          </tr>`;
-      }).join('');
-    }
-
-    function renderDrawer() {
-      const tbody = document.getElementById("drawerTableBody");
-      const items = getDrawerFilteredList();
-
-      const allCount = catalog.length;
-      const adivaCount = catalog.filter(i => i.series === 'adiva').length;
-      const marvelCount = catalog.filter(i => i.series === 'marvel').length;
-      const blissCount = catalog.filter(i => i.series === 'bliss').length;
-
-      document.getElementById("dcount-all").innerText = allCount;
-      document.getElementById("dcount-adiva").innerText = adivaCount;
-      document.getElementById("dcount-marvel").innerText = marvelCount;
-      document.getElementById("dcount-bliss").innerText = blissCount;
-      document.getElementById("drawerBadgeCount").innerText = `${items.length} of ${allCount} items`;
-
-      if (items.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" class="p-8 text-center text-slate-400">No products match your series or search filter.</td></tr>`;
-        return;
-      }
-
-      tbody.innerHTML = items.map(item => {
-        const discountPct = calculateDiscount(item.mrp, item.offerPrice);
-        return `
-          <tr class="border-b border-slate-100 hover:bg-slate-50 transition">
-            <td class="p-2 text-center">
-              <div class="w-8 h-8 bg-slate-100 rounded border border-slate-200 p-0.5 mx-auto flex items-center justify-center">
-                ${generateVectorVisual(item)}
-              </div>
-            </td>
-            <td class="p-2">
-              <div class="font-bold text-slate-900 text-xs leading-snug">${item.name}</div>
-              <div class="font-hindi text-brand-700 text-[11px] font-bold leading-tight">${item.nameHi || ''}</div>
-              <div class="flex items-center gap-2 mt-1">
-                <span class="font-mono font-bold text-slate-700 bg-slate-100 px-1.5 py-0.2 rounded text-[10px] border border-slate-200">${item.sku}</span>
-                <span class="text-[10px] text-slate-400 capitalize">${item.series} • ${item.category}</span>
-              </div>
-            </td>
-            <td class="p-1 text-right">
-              <input type="number" step="0.5" value="${item.listPrice}" onchange="updateItemPrice('${item.id}', 'listPrice', this.value)" class="w-24 text-right bg-white border border-slate-300 rounded px-2 py-1 font-mono text-xs font-bold text-rose-600 focus:ring-1 focus:ring-brand-500">
-            </td>
-            <td class="p-1 text-right">
-              <input type="number" step="0.5" value="${item.mrp}" onchange="updateItemPrice('${item.id}', 'mrp', this.value)" class="w-24 text-right bg-white border border-slate-300 rounded px-2 py-1 font-mono text-xs font-bold text-slate-700 focus:ring-1 focus:ring-brand-500">
-            </td>
-            <td class="p-1 text-right">
-              <input type="number" step="0.5" value="${item.offerPrice}" onchange="updateItemPrice('${item.id}', 'offerPrice', this.value)" class="w-24 text-right bg-white border border-brand-300 rounded px-2 py-1 font-mono text-xs font-extrabold text-brand-600 focus:ring-1 focus:ring-brand-500">
-            </td>
-            <td class="p-2 text-center font-mono font-bold text-emerald-600 text-[11px]">
-              ${discountPct}%
-            </td>
-            <td class="p-2 text-center">
-              <button onclick="handleDeleteProduct('${item.id}', event)" title="Delete" class="text-slate-300 hover:text-rose-600 p-1 rounded hover:bg-rose-50 transition">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-              </button>
-            </td>
-          </tr>
-        `;
-      }).join('');
-    }
-
-    function renderAll() {
-      const items = getFilteredList();
-      document.getElementById("visibleCount").innerText = items.length;
-      document.getElementById("topManagerCount").innerText = catalog.length;
-
-      const empty = document.getElementById("emptyState");
-      const grid = document.getElementById("gridContainer");
-      const table = document.getElementById("tableContainer");
-
-      if (items.length === 0) {
-        empty.classList.remove("hidden");
-        grid.classList.add("hidden");
-        table.classList.add("hidden");
-      } else {
-        empty.classList.add("hidden");
-        if (viewMode === "grid") {
-          grid.classList.remove("hidden");
-          table.classList.add("hidden");
-          renderGrid(items);
-        } else {
-          grid.classList.add("hidden");
-          table.classList.remove("hidden");
-          renderTable(items);
-        }
-      }
-      updateCounters();
-    }
-
-    function updateCounters() {
-      const allCount = catalog.length;
-      const adivaCount = catalog.filter(i => i.series === 'adiva').length;
-      const marvelCount = catalog.filter(i => i.series === 'marvel').length;
-      const blissCount = catalog.filter(i => i.series === 'bliss').length;
-
-      document.getElementById("count-all").innerText = allCount;
-      document.getElementById("count-adiva").innerText = adivaCount;
-      document.getElementById("count-marvel").innerText = marvelCount;
-      document.getElementById("count-bliss").innerText = blissCount;
-
-      document.getElementById("statTotalItems").innerText = `${allCount} SKUs`;
-      document.getElementById("statAdivaCount").innerText = `${adivaCount} SKUs`;
-      document.getElementById("statMarvelCount").innerText = `${marvelCount} SKUs`;
-      document.getElementById("statBlissCount").innerText = `${blissCount} SKUs`;
-
-      const activeSet = activeSeries === 'all' ? catalog : catalog.filter(i => i.series === activeSeries);
-      document.getElementById("cat-count-all").innerText = activeSet.length;
-      document.getElementById("cat-count-switch").innerText = activeSet.filter(i => i.category === 'switch').length;
-      document.getElementById("cat-count-socket").innerText = activeSet.filter(i => i.category === 'socket').length;
-      document.getElementById("cat-count-regulator").innerText = activeSet.filter(i => i.category === 'regulator').length;
-      document.getElementById("cat-count-mcb").innerText = activeSet.filter(i => i.category === 'mcb').length;
-      document.getElementById("cat-count-plate").innerText = activeSet.filter(i => i.category === 'plate').length;
-      document.getElementById("cat-count-surfacebox").innerText = activeSet.filter(i => i.category === 'surfacebox').length;
-      document.getElementById("cat-count-hospitality").innerText = activeSet.filter(i => i.category === 'hospitality').length;
-    }
-
-    function openProductModal(id) {
-      const item = catalog.find(i => i.id === id);
-      if (!item) return;
-      activeModalItem = item;
-
-      const discountPct = calculateDiscount(item.mrp, item.offerPrice);
-      const modal = document.getElementById("productQuickModal");
-
-      const seriesBadge = document.getElementById("modalSeriesBadge");
-      if (item.series === 'bliss') {
-        seriesBadge.className = "px-2.5 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider bg-amber-500 text-slate-950";
-        seriesBadge.innerText = "Reo Bliss";
-      } else if (item.series === 'marvel') {
-        seriesBadge.className = "px-2.5 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider bg-sky-500 text-slate-950";
-        seriesBadge.innerText = "Reo Marvel";
-      } else {
-        seriesBadge.className = "px-2.5 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider bg-rose-500 text-white";
-        seriesBadge.innerText = "Crabtree Adiva";
-      }
-
-      document.getElementById("modalSkuBadge").innerText = item.sku;
-      document.getElementById("modalVisualContainer").innerHTML = generateVectorVisual(item);
-      document.getElementById("modalEnglishName").innerText = item.name;
-      document.getElementById("modalHindiName").innerText = item.nameHi || '';
-      document.getElementById("modalFinishBadge").innerText = `Finish: ${item.finish || 'Silk White'}`;
-      document.getElementById("modalModulesBadge").innerText = `${item.modules || 1} Module Gang`;
-      document.getElementById("modalPackingBadge").innerText = `Pack: ${item.packing || 'Standard Unit'}`;
-
-      document.getElementById("modalListPrice").innerText = formatCurrency(item.listPrice);
-      document.getElementById("modalMrpPrice").innerText = formatCurrency(item.mrp);
-      document.getElementById("modalOfferPrice").innerText = formatCurrency(item.offerPrice);
-      document.getElementById("modalDiscountBadge").innerText = `${discountPct}% OFF MRP`;
-
-      document.getElementById("copySkuBtnText").innerText = "Copy SKU Code";
-
-      document.getElementById("modalEditBtn").onclick = () => {
-        closeProductModal();
-        toggleManageDrawer(true);
-        setDrawerSeriesFilter(item.series);
-        document.getElementById("drawerSearchInput").value = item.sku;
-        handleDrawerSearch(item.sku);
-      };
-
-      document.getElementById("modalDeleteBtn").onclick = (e) => {
-        closeProductModal();
-        handleDeleteProduct(item.id, e);
-      };
-
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-    }
-
-    function closeProductModal() {
-      const modal = document.getElementById("productQuickModal");
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-      activeModalItem = null;
-    }
-
-    function handleModalBackdropClick(e) {
-      if (e.target.id === "productQuickModal") {
-        closeProductModal();
-      }
-    }
-
-    function copyModalSku() {
-      if (!activeModalItem) return;
-      try {
-        const dummy = document.createElement("textarea");
-        document.body.appendChild(dummy);
-        dummy.value = activeModalItem.sku;
-        dummy.select();
-        document.execCommand("copy");
-        document.body.removeChild(dummy);
-        document.getElementById("copySkuBtnText").innerText = "Copied to Clipboard!";
-        setTimeout(() => {
-          const btn = document.getElementById("copySkuBtnText");
-          if (btn) btn.innerText = "Copy SKU Code";
-        }, 2000);
-      } catch (err) {
-        showToast(`SKU: ${activeModalItem.sku}`);
-      }
-    }
-
-    function setDrawerSeriesFilter(series) {
-      drawerSeries = series;
-      document.querySelectorAll(".drawer-series-tab").forEach(tab => {
-        const s = tab.getAttribute("data-dseries");
-        if (s === series) {
-          tab.className = "drawer-series-tab px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 bg-brand-600 text-white shadow-xs";
-        } else {
-          tab.className = "drawer-series-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition flex items-center gap-1.5";
-        }
-      });
-      renderDrawer();
-    }
-
-    function handleDrawerSearch(val) {
-      drawerSearchQuery = val;
-      renderDrawer();
-    }
-
-    function updateItemPrice(id, field, value) {
-      const item = catalog.find(i => i.id === id);
-      if (item) {
-        item[field] = parseFloat(value) || 0;
-        saveCatalog();
-        renderAll();
-        renderDrawer();
-      }
-    }
-
-    function handleDeleteProduct(id, e) {
-      if (e) e.stopPropagation();
-      const idx = catalog.findIndex(i => i.id === id);
-      if (idx !== -1) {
-        lastDeleted = { item: catalog[idx], index: idx };
-        catalog.splice(idx, 1);
-        saveCatalog();
-        renderAll();
-        renderDrawer();
-        showToast(`Deleted ${lastDeleted.item.sku}`, true);
-      }
-    }
-
-    function undoLastDelete() {
-      if (lastDeleted) {
-        catalog.splice(lastDeleted.index, 0, lastDeleted.item);
-        saveCatalog();
-        renderAll();
-        renderDrawer();
-        lastDeleted = null;
-        document.getElementById("undoToast").classList.add("hidden");
-      }
-    }
-
-    function handleCreateProduct(e) {
-      e.preventDefault();
-      const series = document.getElementById("newSeries").value;
-      const sku = document.getElementById("newSku").value.trim().toUpperCase();
-      const name = document.getElementById("newName").value.trim();
-      const nameHi = document.getElementById("newNameHi").value.trim();
-      const category = document.getElementById("newCategory").value;
-      const packing = document.getElementById("newPacking").value.trim();
-      const listPrice = parseFloat(document.getElementById("newListPrice").value) || 0;
-      const mrp = parseFloat(document.getElementById("newMrp").value) || 0;
-      const offerPrice = parseFloat(document.getElementById("newOffer").value) || 0;
-
-      const newProduct = {
-        id: `custom-${Date.now()}`,
-        series,
-        sku,
-        name,
-        nameHi,
-        category,
-        finish: "Standard",
-        modules: 1,
-        packing,
-        listPrice,
-        mrp,
-        offerPrice
-      };
-
-      catalog.unshift(newProduct);
-      saveCatalog();
-      closeAddModal();
-      setSeriesFilter(series);
-      renderAll();
-      renderDrawer();
-      showToast(`Added ${sku} to ${series}`);
-    }
-
-    function setSeriesFilter(series) {
-      activeSeries = series;
-      document.querySelectorAll(".series-tab").forEach(tab => {
-        const s = tab.getAttribute("data-series");
-        if (s === series) {
-          tab.className = "series-tab px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-brand-600 text-white shadow-xs";
-        } else {
-          tab.className = "series-tab px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition flex items-center gap-1.5";
-        }
-      });
-      renderAll();
-    }
-
-    function setCategoryFilter(cat) {
-      activeCategory = cat;
-      document.querySelectorAll(".cat-pill").forEach(btn => {
-        if (btn.getAttribute("data-cat") === cat) {
-          btn.className = "cat-pill px-3 py-1.5 rounded-xl text-xs font-bold transition bg-brand-600 text-white shadow-xs";
-        } else {
-          btn.className = "cat-pill px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
-        }
-      });
-      renderAll();
-    }
-
-    function handleSearch(val) {
-      searchQuery = val;
-      renderAll();
-    }
-
-    function handleSort(val) {
-      activeSort = val;
-      renderAll();
-    }
-
-    function setViewMode(mode) {
-      viewMode = mode;
-      const btnGrid = document.getElementById("viewGridBtn");
-      const btnTable = document.getElementById("viewTableBtn");
-
-      if (mode === "grid") {
-        btnGrid.className = "px-3 py-1.5 rounded-lg text-slate-900 bg-white shadow-xs font-bold text-xs flex items-center gap-1.5 transition";
-        btnTable.className = "px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 font-bold text-xs flex items-center gap-1.5 transition";
-      } else {
-        btnTable.className = "px-3 py-1.5 rounded-lg text-slate-900 bg-white shadow-xs font-bold text-xs flex items-center gap-1.5 transition";
-        btnGrid.className = "px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 font-bold text-xs flex items-center gap-1.5 transition";
-      }
-      renderAll();
-    }
-
-    function resetFilters() {
-      activeSeries = "all";
-      activeCategory = "all";
-      searchQuery = "";
-      activeSort = "default";
-      document.getElementById("searchInput").value = "";
-      document.getElementById("sortSelect").value = "default";
-      setSeriesFilter("all");
-      setCategoryFilter("all");
-    }
-
-    function toggleManageDrawer(forceOpen = false) {
-      const drawer = document.getElementById("manageDrawer");
-      const isOpen = !drawer.classList.contains("translate-x-full");
-      if (isOpen && !forceOpen) {
-        drawer.classList.add("translate-x-full");
-      } else {
-        renderDrawer();
-        drawer.classList.remove("translate-x-full");
-      }
-    }
-
-    function openAddModal() {
-      document.getElementById("addProductForm").reset();
-      document.getElementById("addModal").classList.remove("hidden");
-      document.getElementById("addModal").classList.add("flex");
-    }
-
-    function closeAddModal() {
-      document.getElementById("addModal").classList.add("hidden");
-      document.getElementById("addModal").classList.remove("flex");
-    }
-
-    function exportDataJSON() {
-      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(catalog, null, 2));
-      const downloadAnchor = document.createElement('a');
-      downloadAnchor.setAttribute("href", dataStr);
-      downloadAnchor.setAttribute("download", `Lucky_Cement_Electric_Catalog_${Date.now()}.json`);
-      document.body.appendChild(downloadAnchor);
-      downloadAnchor.click();
-      downloadAnchor.remove();
-      showToast("Catalog JSON exported successfully");
-    }
-
-    function importDataJSON(event) {
-      const file = event.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        try {
-          const imported = JSON.parse(e.target.result);
-          if (Array.isArray(imported)) {
-            catalog = imported;
-            saveCatalog();
-            renderAll();
-            renderDrawer();
-            showToast(`Imported ${imported.length} products`);
-          } else {
-            showToast("Invalid JSON catalog format");
-          }
-        } catch (err) {
-          showToast("Error reading JSON file");
-        }
-      };
-      reader.readAsText(file);
-    }
-
-    window.addEventListener("DOMContentLoaded", () => {
-      loadCatalog();
-      renderAll();
-      const pDate = document.getElementById("printDate");
-      if (pDate) {
-        pDate.innerText = new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
-      }
-    });
-
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeAddModal();
-        closeProductModal();
-        closeSetBaselineModal();
-        closePasswordModal();
-        closeConfirmModal();
-        closeMessageBox();
-        document.getElementById("manageDrawer").classList.add("translate-x-full");
-      }
-    });
-  </script>
+  <!-- Linked External JavaScript File -->
+  <script src="app.js"></script>
 </body>
 </html>
